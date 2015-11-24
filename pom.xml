@@ -20,11 +20,11 @@
 	<dependencyManagement>
 
 		<dependencies>
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>test-objects</artifactId>
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>test-objects</artifactId>
 				<version>${test-objects.version}</version>
-		</dependency>
+			</dependency>
 
 		</dependencies>
 
