@@ -35,7 +35,7 @@ import java.net.UnknownHostException;
  * @version 1.0
  * @author Asterios Raptis
  */
-public class GetIP
+public class IPResolver
 {
 
 	/**
@@ -126,7 +126,7 @@ public class GetIP
 		}
 		finally
 		{
-			SocketUtils.closeServerSocket(socket);
+			SocketExtensions.closeServerSocket(socket);
 		}
 		return inetAddress;
 	}
@@ -144,8 +144,8 @@ public class GetIP
 		IOException
 	{
 		InetAddress inetAddress = null;
-		inetAddress = GetIP.getLocalIPFromServerSocket(10000, 20000);
-		return GetIP.getIP(inetAddress);
+		inetAddress = IPResolver.getLocalIPFromServerSocket(10000, 20000);
+		return IPResolver.getIP(inetAddress);
 	}
 
 }

@@ -37,12 +37,12 @@ import org.testng.annotations.Test;
 import de.alpharogroup.BaseTestCase;
 
 /**
- * Test class for the class GetIP.
+ * Test class for the class {@link IPResolver}.
  *
  * @version 1.0
  * @author Asterios Raptis
  */
-public class GetIPTest extends BaseTestCase
+public class IPResolverTest extends BaseTestCase
 {
 
 	/** The local ip. */
@@ -107,14 +107,14 @@ public class GetIPTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getIP(java.net.InetAddress)}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getIP(java.net.InetAddress)}.
 	 */
 	@Test(enabled = false)
 	public void testGetIP()
 	{
 		if (this.javaSunCom != null)
 		{
-			final String compare = GetIP.getIP(this.javaSunCom);
+			final String compare = IPResolver.getIP(this.javaSunCom);
 			final String expected = this.sJavaSunCom;
 			this.result = expected.equals(compare);
 			AssertJUnit.assertTrue("", this.result);
@@ -129,14 +129,14 @@ public class GetIPTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getIPAsByte(java.net.InetAddress)}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getIPAsByte(java.net.InetAddress)}.
 	 */
 	@Test(enabled = false)
 	public void testGetIPAsByte()
 	{
 		if (this.javaSunCom != null)
 		{
-			final byte[] compare = GetIP.getIPAsByte(this.javaSunCom);
+			final byte[] compare = IPResolver.getIPAsByte(this.javaSunCom);
 			final byte[] expected = this.byteIpJavaSunCom;
 			for (int i = 0; i < compare.length; i++)
 			{
@@ -154,7 +154,7 @@ public class GetIPTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getLocalIP()}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIP()}.
 	 *
 	 * @throws UnknownHostException
 	 *             the unknown host exception
@@ -162,14 +162,14 @@ public class GetIPTest extends BaseTestCase
 	@Test(enabled = false)
 	public void testGetLocalIP() throws UnknownHostException
 	{
-		final String compare = GetIP.getLocalIP();
+		final String compare = IPResolver.getLocalIP();
 		final String expected = this.localIP;
 		this.result = expected.equals(compare);
 		AssertJUnit.assertTrue("", this.result);
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getLocalIPAsByte()}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPAsByte()}.
 	 * 
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
@@ -177,7 +177,7 @@ public class GetIPTest extends BaseTestCase
 	@Test(enabled = false)
 	public void testGetLocalIPAsByte() throws UnknownHostException
 	{
-		final byte[] compare = GetIP.getLocalIPAsByte();
+		final byte[] compare = IPResolver.getLocalIPAsByte();
 		final byte[] expected = this.localIpAddress;
 		for (int i = 0; i < compare.length; i++)
 		{
@@ -187,7 +187,7 @@ public class GetIPTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getLocalIPFromServerSocket(int, int)}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocket(int, int)}.
 	 * 
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
@@ -197,14 +197,14 @@ public class GetIPTest extends BaseTestCase
 	@Test(enabled = false)
 	public void testGetLocalIPFromServerSocket() throws UnknownHostException, IOException
 	{
-		final InetAddress compare = GetIP.getLocalIPFromServerSocket(10080, 1000);
+		final InetAddress compare = IPResolver.getLocalIPFromServerSocket(10080, 1000);
 		final InetAddress expected = this.localhost;
 		this.result = expected.equals(compare);
 		AssertJUnit.assertTrue("", this.result);
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.GetIP#getLocalIPFromServerSocketAsString()}.
+	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocketAsString()}.
 	 * 
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
@@ -214,7 +214,7 @@ public class GetIPTest extends BaseTestCase
 	@Test(enabled = false)
 	public void testGetLocalIPFromServerSocketAsString() throws UnknownHostException, IOException
 	{
-		final String compare = GetIP.getLocalIPFromServerSocketAsString();
+		final String compare = IPResolver.getLocalIPFromServerSocketAsString();
 		final String expected = this.localIP;
 		this.result = expected.equals(compare);
 		AssertJUnit.assertTrue("", this.result);

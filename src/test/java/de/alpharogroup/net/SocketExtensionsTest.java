@@ -26,15 +26,15 @@ package de.alpharogroup.net;
 
 import org.junit.Test;
 
-public class SocketUtilsTest
+public class SocketExtensionsTest
 {
 
 	@Test
 	public void testAvailableInt()
 	{
-		boolean port25Available = SocketUtils.available(25);
+		boolean port25Available = SocketExtensions.available(25);
 		System.out.println(port25Available);
-		port25Available = SocketUtils.available(1024);
+		port25Available = SocketExtensions.available(1024);
 		System.out.println(port25Available);
 	}
 

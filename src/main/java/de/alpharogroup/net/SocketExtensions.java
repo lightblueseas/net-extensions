@@ -41,11 +41,11 @@ import org.apache.log4j.Logger;
  * @version 1.0
  * @author Asterios Raptis
  */
-public class SocketUtils
+public class SocketExtensions
 {
 
 	/** The Constant logger. */
-	private static final Logger LOGGER = Logger.getLogger(SocketUtils.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(SocketExtensions.class.getName());
 
 	/**
 	 * Checks if the given port at localhost is available.

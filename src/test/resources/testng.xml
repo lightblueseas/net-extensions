@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="de.alpharogroup.net.GetIPTest"/>
+      <class name="de.alpharogroup.net.IPResolverTest"/>
       <class name="de.alpharogroup.net.proxy.BaseProxySelectorTest"/>
     </classes>
   </test> <!-- Test -->
