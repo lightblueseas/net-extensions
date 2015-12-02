@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>net-extensions</artifactId>
-	<version>4.7.0</version>
+	<version>4.8.0</version>
 	
 	<name>${project.artifactId}</name>
 
@@ -38,7 +38,7 @@
 	
 
 	<properties>
-		<test-objects.version>4.7.0</test-objects.version>
+		<test-objects.version>4.8.0</test-objects.version>
 	</properties>
 
 	<dependencyManagement>
