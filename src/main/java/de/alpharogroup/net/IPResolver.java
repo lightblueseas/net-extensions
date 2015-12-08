@@ -31,7 +31,7 @@ import java.net.UnknownHostException;
 
 /**
  * Utility class for getting the ip from hosts.
- * 
+ *
  * @version 1.0
  * @author Asterios Raptis
  */
@@ -65,6 +65,17 @@ public class IPResolver
 	}
 
 	/**
+	 * Resolves the ip address from the given InetAddress object.
+	 *
+	 * @param inetAddress
+	 *            the inet address
+	 * @return Returns the ip address from the given InetAddress as a String.
+	 */
+	public static String resolveIP(final InetAddress inetAddress) {
+		return getIP(inetAddress);
+	}
+
+	/**
 	 * Gets the ip address as a byte array. Wrappes the method getAddress() from the InetAddress.
 	 *
 	 * @param inetAddress
@@ -90,7 +101,7 @@ public class IPResolver
 
 	/**
 	 * Gets the local ip address as a byte array.
-	 * 
+	 *
 	 * @return Returns the local ip address as a byte array.
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
@@ -102,7 +113,7 @@ public class IPResolver
 
 	/**
 	 * Gets the InetAddress object from the local host from a ServerSocket object.
-	 * 
+	 *
 	 * @param port
 	 *            the local TCP port
 	 * @param backlog
@@ -133,7 +144,7 @@ public class IPResolver
 
 	/**
 	 * Gets the ip address from the local host as String. It use a ServerSocket object to get it.
-	 * 
+	 *
 	 * @return Returns the ip from the local host from a ServerSocket object as String.
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
