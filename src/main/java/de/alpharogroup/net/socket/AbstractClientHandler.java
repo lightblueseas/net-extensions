@@ -8,14 +8,16 @@ import java.net.Socket;
 
 import org.apache.log4j.Logger;
 
+import lombok.Getter;
+
 public abstract class AbstractClientHandler implements Runnable {
 
 	private static Logger logger = Logger.getLogger(AbstractClientHandler.class.getName());
-
+	@Getter
 	private InetAddress inetAddressFromClient = null;
-
+	@Getter
 	private String clientAddress = null;
-
+	@Getter
 	private Socket socket = null;
 
 	public AbstractClientHandler(final Socket s) {
@@ -55,32 +57,5 @@ public abstract class AbstractClientHandler implements Runnable {
 	}// end of run()
 
 	protected abstract void process(Object object);
-
-	/**
-	 * Returns the field <code>inetAddressFromClient</code>.
-	 * 
-	 * @return The field <code>inetAddressFromClient</code>.
-	 */
-	public InetAddress getInetAddressFromClient() {
-		return inetAddressFromClient;
-	}
-
-	/**
-	 * Returns the field <code>clientAddress</code>.
-	 * 
-	 * @return The field <code>clientAddress</code>.
-	 */
-	public String getClientAddress() {
-		return clientAddress;
-	}
-
-	/**
-	 * Returns the field <code>socket</code>.
-	 * 
-	 * @return The field <code>socket</code>.
-	 */
-	public Socket getSocket() {
-		return socket;
-	}
 
 }
