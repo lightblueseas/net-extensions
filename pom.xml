@@ -38,7 +38,7 @@
 
 
 	<properties>
-		<test-objects.version>4.8.0</test-objects.version>
+		<test-objects.version>4.9.0</test-objects.version>
 	</properties>
 
 	<dependencyManagement>
