@@ -1,5 +1,7 @@
 # net-extensions
 
+The net-extensions project provides utility classes for net operations.
+
 ## License
 
 The source code comes under the liberal MIT License, making net-extensions great for all types of applications.

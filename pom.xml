@@ -15,7 +15,7 @@
 	<name>${project.artifactId}</name>
 
 	<description>
-		Parent project that holds utility classes for net operations.
+		The net-extensions project provides utility classes for net operations.
 	</description>
 
 	<url>https://github.com/lightblueseas/net-extensions</url>
