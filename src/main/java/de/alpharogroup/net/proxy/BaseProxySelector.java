@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The Class BaseProxySelector holds a map with proxy addresses. It can replace the default
+ * The class BaseProxySelector holds a map with proxy addresses. It can replace the default
  * ProxySelector.
  * 
  * Example:

@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net;
+package de.alpharogroup.net.socket;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -37,12 +37,11 @@ import org.apache.log4j.Logger;
 
 /**
  * Helper class for handling Sockets.
- * 
+ *
  * @version 1.0
  * @author Asterios Raptis
  */
-public class SocketExtensions
-{
+public class SocketExtensions {
 
 	/** The Constant logger. */
 	private static final Logger LOGGER = Logger.getLogger(SocketExtensions.class.getName());
@@ -52,86 +51,100 @@ public class SocketExtensions
 	 *
 	 * @param port
 	 *            the port number.
-	 * @return If the given port at the given host is available true, otherwise false.
+	 * @return If the given port at the given host is available true, otherwise
+	 *         false.
 	 */
-	public static boolean available(final int port)
-	{
+	public static boolean available(final int port) {
 		return available("localhost", port);
 	}
 
 	/**
-	 * Checks if the given port at the given host is available. Note: Socket will be closed after
-	 * the test.
+	 * Checks if the given port at the given host is available. Note: Socket
+	 * will be closed after the test.
 	 *
 	 * @param host
 	 *            the host name.
 	 * @param port
 	 *            the port number.
-	 * @return If the given port at the given host is available true, otherwise false.
+	 * @return If the given port at the given host is available true, otherwise
+	 *         false.
 	 */
-	public static boolean available(final String host, final int port)
-	{
+	public static boolean available(final String host, final int port) {
 		Socket socket = null;
-		try
-		{
+		try {
 			socket = newSocket(host, port);
 			return false;
-		}
-		catch (final IOException ignored)
-		{
+		} catch (final IOException ignored) {
 			return true;
-		}
-		finally
-		{
-			if (socket != null && !socket.isClosed())
-			{
-				try
-				{
-					socket.close();
-				}
-				catch (final IOException e)
-				{
-					LOGGER.error("Socket could not be closed on host " + host + " on port " + port,
-						e);
-				}
+		} finally {
+			if (!closeClientSocket(socket)) {
+				LOGGER.error("Socket could not be closed on host " + host + " on port " + port);
 			}
 		}
 	}
 
 	/**
+	 * Close the given {@link Socket}.
+	 *
+	 * @param clientSocket
+	 *            the client socket
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static void close(final Socket clientSocket) throws IOException {
+		if (clientSocket != null && !clientSocket.isClosed()) {
+			clientSocket.close();
+		}
+	}
+
+	/**
+	 * Closes the given client socket.
+	 *
+	 * @param clientSocket
+	 *            The client socket to close.
+	 * @return Returns true if the client socket is closed otherwise false.
+	 */
+	public static boolean closeClientSocket(final Socket clientSocket) {
+		boolean closed = true;
+		try {
+			close(clientSocket);
+		} catch (final IOException e) {
+			LOGGER.error("IOException occured by trying to close the client socket.", e);
+			closed = false;
+		} finally {
+			try {
+				close(clientSocket);
+			} catch (final IOException e) {
+				LOGGER.error("IOException occured by trying to close the client socket.", e);
+				closed = false;
+			}
+		}
+		return closed;
+	}
+
+	/**
 	 * Closes the given ServerSocket.
-	 * 
+	 *
 	 * @param serverSocket
 	 *            The ServerSocket to close.
 	 * @return Returns true if the ServerSocket is closed otherwise false.
 	 */
-	public static boolean closeServerSocket(ServerSocket serverSocket)
-	{
+	public static boolean closeServerSocket(ServerSocket serverSocket) {
 		boolean closed = true;
-		try
-		{
-			if (serverSocket != null && !serverSocket.isClosed())
-			{
+		try {
+			if (serverSocket != null && !serverSocket.isClosed()) {
 				serverSocket.close();
 				serverSocket = null;
 			}
-		}
-		catch (final IOException e)
-		{
+		} catch (final IOException e) {
 			LOGGER.error("IOException occured by trying to close the server socket.", e);
 			closed = false;
-		}
-		finally
-		{
-			try
-			{
-				if (serverSocket != null && !serverSocket.isClosed())
-				{
+		} finally {
+			try {
+				if (serverSocket != null && !serverSocket.isClosed()) {
 					serverSocket.close();
 				}
-			}
-			catch (final IOException e)
-			{
+			} catch (final IOException e) {
 				LOGGER.error("IOException occured by trying to close the server socket.", e);
 				closed = false;
 			}
@@ -148,16 +161,16 @@ public class SocketExtensions
 	 *            the port number.
 	 * @return The created Socket.
 	 * @throws IOException
-	 *             is thrown if the port is not available or other network errors.
+	 *             is thrown if the port is not available or other network
+	 *             errors.
 	 */
-	public static Socket newSocket(final String host, final int port) throws IOException
-	{
+	public static Socket newSocket(final String host, final int port) throws IOException {
 		return new Socket(host, port);
 	}
 
 	/**
 	 * Reads an object from the given socket InetAddress.
-	 * 
+	 *
 	 * @param inetAddress
 	 *            the InetAddress to read.
 	 * @param port
@@ -169,14 +182,13 @@ public class SocketExtensions
 	 *             the class not found exception
 	 */
 	public static Object readObject(final InetAddress inetAddress, final int port)
-		throws IOException, ClassNotFoundException
-	{
+			throws IOException, ClassNotFoundException {
 		return readObject(new Socket(inetAddress, port));
 	}
 
 	/**
 	 * Reads an object from the given socket object.
-	 * 
+	 *
 	 * @param clientSocket
 	 *            the socket to read.
 	 * @return the object
@@ -185,54 +197,34 @@ public class SocketExtensions
 	 * @throws ClassNotFoundException
 	 *             the class not found exception
 	 */
-	public static Object readObject(final Socket clientSocket) throws IOException,
-		ClassNotFoundException
-	{
+	public static Object readObject(final Socket clientSocket) throws IOException, ClassNotFoundException {
 		ObjectInputStream in = null;
 		Object objectToReturn = null;
 
-		try
-		{
+		try {
 			in = new ObjectInputStream(new BufferedInputStream(clientSocket.getInputStream()));
 
-			while (true)
-			{
+			while (true) {
 				objectToReturn = in.readObject();
-				if (objectToReturn != null)
-				{
+				if (objectToReturn != null) {
 					break;
 				}
 			}
 			in.close();
 			clientSocket.close();
-		}
-		catch (final IOException e)
-		{
+		} catch (final IOException e) {
 			LOGGER.error("IOException occured by trying to read the object.", e);
 			throw e;
-		}
-		catch (final ClassNotFoundException e)
-		{
-			LOGGER.error(
-				"ClassNotFoundException occured by trying to read the object from the socket.", e);
+		} catch (final ClassNotFoundException e) {
+			LOGGER.error("ClassNotFoundException occured by trying to read the object from the socket.", e);
 			throw e;
-		}
-		finally
-		{
-			try
-			{
-				if (in != null)
-				{
+		} finally {
+			try {
+				if (in != null) {
 					in.close();
 				}
-
-				if (clientSocket != null)
-				{
-					clientSocket.close();
-				}
-			}
-			catch (final IOException e)
-			{
+				close(clientSocket);
+			} catch (final IOException e) {
 				LOGGER.error("IOException occured by trying to close the socket.", e);
 				throw e;
 			}
@@ -241,10 +233,38 @@ public class SocketExtensions
 		return objectToReturn;
 	}
 
+	/**
+	 * Reads an object from the given port.
+	 *
+	 * @param port
+	 *            the port
+	 * @return the object
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 * @throws ClassNotFoundException
+	 *             the class not found exception
+	 */
+	public static Object readObject(final int port) throws IOException, ClassNotFoundException {
+		ServerSocket serverSocket = null;
+		Socket clientSocket = null;
+		Object objectToReturn = null;
+		try {
+			serverSocket = new ServerSocket(port);
+			clientSocket = serverSocket.accept();
+			objectToReturn = readObject(clientSocket);
+		} catch (final IOException e) {
+			throw e;
+		} catch (final ClassNotFoundException e) {
+			throw e;
+		} finally {
+			closeServerSocket(serverSocket);
+		}
+		return objectToReturn;
+	}
 
 	/**
 	 * Reads an object from the given socket InetAddress.
-	 * 
+	 *
 	 * @param serverName
 	 *            The Name from the address to read.
 	 * @param port
@@ -255,16 +275,16 @@ public class SocketExtensions
 	 * @throws ClassNotFoundException
 	 *             the class not found exception
 	 */
-	public static Object readObject(final String serverName, final int port) throws IOException,
-		ClassNotFoundException
-	{
+	public static Object readObject(final String serverName, final int port)
+			throws IOException, ClassNotFoundException {
 		final InetAddress inetAddress = InetAddress.getByName(serverName);
 		return readObject(new Socket(inetAddress, port));
 	}
 
 	/**
-	 * Writes the given Object to the given InetAddress who listen to the given port.
-	 * 
+	 * Writes the given Object to the given InetAddress who listen to the given
+	 * port.
+	 *
 	 * @param inetAddress
 	 *            the inet address
 	 * @param port
@@ -274,41 +294,27 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public static void writeObject(final InetAddress inetAddress, final int port,
-		final Object objectToSend) throws IOException
-	{
+	public static void writeObject(final InetAddress inetAddress, final int port, final Object objectToSend)
+			throws IOException {
 		Socket socketToClient = null;
 		ObjectOutputStream oos = null;
 
-		try
-		{
+		try {
 			socketToClient = new Socket(inetAddress, port);
 			oos = new ObjectOutputStream(new BufferedOutputStream(socketToClient.getOutputStream()));
 			oos.writeObject(objectToSend);
 			oos.close();
 			socketToClient.close();
-		}
-		catch (final IOException e)
-		{
+		} catch (final IOException e) {
 			LOGGER.error("IOException occured by trying to write the object.", e);
 			throw e;
-		}
-		finally
-		{
-			try
-			{
-				if (oos != null)
-				{
+		} finally {
+			try {
+				if (oos != null) {
 					oos.close();
 				}
-
-				if (socketToClient != null)
-				{
-					socketToClient.close();
-				}
-			}
-			catch (final IOException e)
-			{
+				close(socketToClient);
+			} catch (final IOException e) {
 				LOGGER.error("IOException occured by trying to close the socket.", e);
 				throw e;
 			}
@@ -317,7 +323,7 @@ public class SocketExtensions
 
 	/**
 	 * Writes the given Object to the given Socket who listen to the given port.
-	 * 
+	 *
 	 * @param socket
 	 *            The Socket to the receiver.
 	 * @param port
@@ -327,15 +333,13 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public static void writeObject(final Socket socket, final int port, final Object objectToSend)
-		throws IOException
-	{
+	public static void writeObject(final Socket socket, final int port, final Object objectToSend) throws IOException {
 		writeObject(socket.getInetAddress(), port, objectToSend);
 	}
 
 	/**
 	 * Writes the given Object.
-	 * 
+	 *
 	 * @param serverName
 	 *            The Name from the receiver(Server).
 	 * @param port
@@ -345,9 +349,8 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public static void writeObject(final String serverName, final int port,
-		final Object objectToSend) throws IOException
-	{
+	public static void writeObject(final String serverName, final int port, final Object objectToSend)
+			throws IOException {
 		final InetAddress inetAddress = InetAddress.getByName(serverName);
 		writeObject(inetAddress, port, objectToSend);
 	}
