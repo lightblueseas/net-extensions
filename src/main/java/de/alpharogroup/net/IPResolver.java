@@ -29,6 +29,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.UnknownHostException;
 
+import de.alpharogroup.net.socket.SocketExtensions;
+
 /**
  * Utility class for getting the ip from hosts.
  *

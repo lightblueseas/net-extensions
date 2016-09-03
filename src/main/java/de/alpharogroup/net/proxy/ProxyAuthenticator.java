@@ -27,7 +27,7 @@ package de.alpharogroup.net.proxy;
 import java.net.PasswordAuthentication;
 
 /**
- * The Class ProxyAuthenticator.
+ * The class ProxyAuthenticator.
  */
 public class ProxyAuthenticator extends java.net.Authenticator
 {

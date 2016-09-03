@@ -31,7 +31,7 @@ import java.net.Proxy.Type;
 import java.net.SocketAddress;
 
 /**
- * The Class ProxyDecorator decorates a <code>{@link java.net.Proxy}</code> object.
+ * The class ProxyDecorator decorates a <code>{@link java.net.Proxy}</code> object.
  */
 public class ProxyDecorator implements Serializable
 {

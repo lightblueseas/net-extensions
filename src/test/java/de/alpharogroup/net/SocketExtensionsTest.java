@@ -26,6 +26,8 @@ package de.alpharogroup.net;
 
 import org.junit.Test;
 
+import de.alpharogroup.net.socket.SocketExtensions;
+
 public class SocketExtensionsTest
 {
 
