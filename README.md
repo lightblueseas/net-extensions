@@ -22,7 +22,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- net-extensions version -->
-		<net-extensions.version>4.10.0</net-extensions.version>
+		<net-extensions.version>4.11.0</net-extensions.version>
 
 		<dependencies>
 			...
