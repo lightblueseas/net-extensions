@@ -67,17 +67,6 @@ public class IPResolver
 	}
 
 	/**
-	 * Resolves the ip address from the given InetAddress object.
-	 *
-	 * @param inetAddress
-	 *            the inet address
-	 * @return Returns the ip address from the given InetAddress as a String.
-	 */
-	public static String resolveIP(final InetAddress inetAddress) {
-		return getIP(inetAddress);
-	}
-
-	/**
 	 * Gets the ip address as a byte array. Wrappes the method getAddress() from the InetAddress.
 	 *
 	 * @param inetAddress
@@ -153,12 +142,24 @@ public class IPResolver
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
 	 */
-	public static String getLocalIPFromServerSocketAsString() throws UnknownHostException,
-		IOException
+	public static String getLocalIPFromServerSocketAsString()
+		throws UnknownHostException, IOException
 	{
 		InetAddress inetAddress = null;
 		inetAddress = IPResolver.getLocalIPFromServerSocket(10000, 20000);
 		return IPResolver.getIP(inetAddress);
+	}
+
+	/**
+	 * Resolves the ip address from the given InetAddress object.
+	 *
+	 * @param inetAddress
+	 *            the inet address
+	 * @return Returns the ip address from the given InetAddress as a String.
+	 */
+	public static String resolveIP(final InetAddress inetAddress)
+	{
+		return getIP(inetAddress);
 	}
 
 }

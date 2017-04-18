@@ -43,14 +43,14 @@ public class BaseProxySelectorTest
 {
 
 	@Test(enabled = false)
-	public void testBaseProxySelector() throws URISyntaxException, MalformedURLException,
-		IOException
+	public void testBaseProxySelector()
+		throws URISyntaxException, MalformedURLException, IOException
 	{
 		// Populate the HashMap (List of proxies)
 		final HashMap<SocketAddress, ProxyDecorator> proxies = new HashMap<>();
 		// Change here to the appropriate InetAddress(ip address and port) from your proxy server.
-		final ProxyDecorator pd = new ProxyDecorator(Proxy.Type.HTTP, new InetSocketAddress(
-			"127.0.0.1", 3128));
+		final ProxyDecorator pd = new ProxyDecorator(Proxy.Type.HTTP,
+			new InetSocketAddress("127.0.0.1", 3128));
 		proxies.put(pd.address(), pd);
 
 		final BaseProxySelector proxySelector = new BaseProxySelector(ProxySelector.getDefault(),

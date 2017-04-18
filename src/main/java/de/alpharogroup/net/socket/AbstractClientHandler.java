@@ -34,7 +34,8 @@ import org.apache.log4j.Logger;
 
 import lombok.Getter;
 
-public abstract class AbstractClientHandler implements Runnable {
+public abstract class AbstractClientHandler implements Runnable
+{
 
 	private static Logger logger = Logger.getLogger(AbstractClientHandler.class.getName());
 	@Getter
@@ -44,42 +45,57 @@ public abstract class AbstractClientHandler implements Runnable {
 	@Getter
 	private Socket socket = null;
 
-	public AbstractClientHandler(final Socket s) {
+	public AbstractClientHandler(final Socket s)
+	{
 		socket = s;
 	}
 
+	protected abstract void process(Object object);
+
 	@Override
-	public void run() {
+	public void run()
+	{
 		ObjectInputStream ois = null;
-		try {
+		try
+		{
 			ois = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
 			clientAddress = socket.getInetAddress().getHostAddress();
 			inetAddressFromClient = socket.getInetAddress();
-			while (true) {
+			while (true)
+			{
 				final Object object = ois.readObject();
 				process(object);
 			}
-		} catch (final IOException e) {
+		}
+		catch (final IOException e)
+		{
 			System.out.println("IO Fehler bei socket: " + e.toString());
 			logger.error("IO Fehler bei socket: " + e.toString(), e);
-		} catch (final ClassNotFoundException cnfe) {
+		}
+		catch (final ClassNotFoundException cnfe)
+		{
 			logger.error("Eine ClassNotFoundException wurde erzeugt:\n " + cnfe.getMessage(), cnfe);
-		} finally {
-			try {
-				if (ois != null) {
+		}
+		finally
+		{
+			try
+			{
+				if (ois != null)
+				{
 					ois.close();
 				}
 
-				if (socket != null) {
+				if (socket != null)
+				{
 					socket.close();
 				}
-			} catch (final IOException e) {
+			}
+			catch (final IOException e)
+			{
 				logger.error("IO Fehler bei socket: " + e.toString(), e);
 			}
 		}
 		logger.info("Socket Beended: " + socket);
 	}// end of run()
-
-	protected abstract void process(Object object);
 
 }
