@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -43,14 +43,14 @@ public class BaseProxySelectorTest
 {
 
 	@Test(enabled = false)
-	public void testBaseProxySelector() throws URISyntaxException, MalformedURLException,
-		IOException
+	public void testBaseProxySelector()
+		throws URISyntaxException, MalformedURLException, IOException
 	{
 		// Populate the HashMap (List of proxies)
 		final HashMap<SocketAddress, ProxyDecorator> proxies = new HashMap<>();
 		// Change here to the appropriate InetAddress(ip address and port) from your proxy server.
-		final ProxyDecorator pd = new ProxyDecorator(Proxy.Type.HTTP, new InetSocketAddress(
-			"127.0.0.1", 3128));
+		final ProxyDecorator pd = new ProxyDecorator(Proxy.Type.HTTP,
+			new InetSocketAddress("127.0.0.1", 3128));
 		proxies.put(pd.address(), pd);
 
 		final BaseProxySelector proxySelector = new BaseProxySelector(ProxySelector.getDefault(),

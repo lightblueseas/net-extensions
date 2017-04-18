@@ -22,7 +22,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- net-extensions version -->
-		<net-extensions.version>4.10.0</net-extensions.version>
+		<net-extensions.version>4.12.0</net-extensions.version>
 
 		<dependencies>
 			...
@@ -50,6 +50,9 @@ Don't forget to add new units tests on your changes.
 Do not hesitate to contact the net-extensions developers with your questions, concerns, comments, bug reports, or feature requests.
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/lightblueseas/net-extensions/issues).
 
+## Note
+
+No animals were harmed in the making of this library.
 
 # Donate
 

@@ -24,20 +24,25 @@
  */
 package de.alpharogroup.net;
 
-import org.junit.Test;
+import lombok.Getter;
 
-import de.alpharogroup.net.socket.SocketExtensions;
-
-public class SocketExtensionsTest
+/**
+ * The enum {@link ProxyPropertyKey} holds system property keys for proxies.
+ * 
+ * @see <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/net/properties.html">Oracle
+ *      net properties</a>
+ */
+public enum ProxyPropertyKey
 {
+	HTTP_PROXY_HOST("http.proxyHost"), HTTP_PROXY_PORT("http.proxyPort"), HTTP_NON_PROXY_HOSTS(
+		"http.nonProxyHosts"), SOCKS_PROXY_HOST("socksProxyHost"), SOCKS_PROXY_PORT(
+			"socksProxyPort"), FTP_PROXY_HOST("ftp.proxyHost"), FTP_PROXY_PORT(
+				"ftp.proxyPort"), FTP_NON_PROXY_HOSTS("ftp.nonProxyHosts");
+	@Getter
+	private String value;
 
-	@Test
-	public void testAvailableInt()
+	ProxyPropertyKey(String value)
 	{
-		boolean port25Available = SocketExtensions.available(25);
-		System.out.println(port25Available);
-		port25Available = SocketExtensions.available(1024);
-		System.out.println(port25Available);
+		this.value = value;
 	}
-
 }

@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2007 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -64,17 +64,6 @@ public class IPResolver
 			}
 		}
 		return ip;
-	}
-
-	/**
-	 * Resolves the ip address from the given InetAddress object.
-	 *
-	 * @param inetAddress
-	 *            the inet address
-	 * @return Returns the ip address from the given InetAddress as a String.
-	 */
-	public static String resolveIP(final InetAddress inetAddress) {
-		return getIP(inetAddress);
 	}
 
 	/**
@@ -153,12 +142,24 @@ public class IPResolver
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
 	 */
-	public static String getLocalIPFromServerSocketAsString() throws UnknownHostException,
-		IOException
+	public static String getLocalIPFromServerSocketAsString()
+		throws UnknownHostException, IOException
 	{
 		InetAddress inetAddress = null;
 		inetAddress = IPResolver.getLocalIPFromServerSocket(10000, 20000);
 		return IPResolver.getIP(inetAddress);
+	}
+
+	/**
+	 * Resolves the ip address from the given InetAddress object.
+	 *
+	 * @param inetAddress
+	 *            the inet address
+	 * @return Returns the ip address from the given InetAddress as a String.
+	 */
+	public static String resolveIP(final InetAddress inetAddress)
+	{
+		return getIP(inetAddress);
 	}
 
 }
