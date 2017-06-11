@@ -17,7 +17,7 @@
 	<description>
 		The net-extensions project provides utility classes for net operations.
 	</description>
-	
+
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -47,6 +47,7 @@
 
 	<properties>
 		<test-objects.version>4.16.0</test-objects.version>
+		<jsch.version>0.1.54</jsch.version>
 	</properties>
 
 	<dependencyManagement>
@@ -58,15 +59,27 @@
 				<version>${test-objects.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>${jsch.version}</version>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>test-objects</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
 			<scope>test</scope>
 		</dependency>
 
