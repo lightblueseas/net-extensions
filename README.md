@@ -6,11 +6,17 @@ The net-extensions project provides utility classes for net operations.
 
 The source code comes under the liberal MIT License, making net-extensions great for all types of applications.
 
-# Build status and latest maven version
+## Build status
+
 [![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions)
 
+## Maven Central
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions)
+
+## javadoc
+
+net-extensions [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/net-extensions.svg)](http://www.javadoc.io/doc/de.alpharogroup/net-extensions)
 
 ## Maven dependency
 
