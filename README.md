@@ -27,11 +27,12 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-		<!-- net-extensions version -->
+		<!-- NET-EXTENSIONS version -->
 		<net-extensions.version>4.12.0</net-extensions.version>
 
 		<dependencies>
 			...
+            <!-- NET-EXTENSIONS DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>net-extensions</artifactId>
