@@ -46,7 +46,7 @@
 
 
 	<properties>
-		<test-objects.version>4.17.0</test-objects.version>
+		<test-objects.version>4.19.0</test-objects.version>
 		<jsch.version>0.1.54</jsch.version>
 	</properties>
 
