@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.4.0</version>
+		<version>3.11</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>net-extensions</artifactId>
-	<version>4.13.0-SNAPSHOT</version>
+	<version>4.14-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 
@@ -46,7 +46,7 @@
 
 
 	<properties>
-		<test-objects.version>4.21.0</test-objects.version>
+		<test-objects.version>4.24.0</test-objects.version>
 		<jsch.version>0.1.54</jsch.version>
 	</properties>
 
