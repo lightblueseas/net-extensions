@@ -26,17 +26,29 @@ package de.alpharogroup.net.proxy;
 
 import java.net.PasswordAuthentication;
 
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
+
 /**
- * The class ProxyAuthenticator.
+ * The class {@link ProxyAuthenticator}.
  */
+@Getter
+@EqualsAndHashCode(callSuper=true)
+@ToString
+@Builder(toBuilder = true)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class ProxyAuthenticator extends java.net.Authenticator
 {
 
 	/** The user. */
-	private final String user;
+	String user;
 
 	/** The password. */
-	private final String password;
+	String password;
 
 	/**
 	 * Instantiates a new proxy authenticator.

@@ -32,6 +32,10 @@ import org.apache.log4j.Logger;
 
 import lombok.Getter;
 
+/**
+ * The class {@link SimpleSocketServer}.
+ */
+@Getter
 public class SimpleSocketServer implements Runnable
 {
 
@@ -39,20 +43,16 @@ public class SimpleSocketServer implements Runnable
 	private Logger logger = Logger.getLogger(this.getClass());
 
 	/** The server socket. */
-	@Getter
 	private final ServerSocket serverSocket;
 
 	/** The client socket. */
-	@Getter
 	private Socket clientSocket;
 
 	/** The server port. */
-	@Getter
 	private int port;
 
 	public SimpleSocketServer(final int ports) throws IOException
 	{
-		super();
 		port = ports;
 		serverSocket = new ServerSocket(ports);
 	}
@@ -79,6 +79,9 @@ public class SimpleSocketServer implements Runnable
 		return clientHandler;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void run()
 	{
