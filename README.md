@@ -1,22 +1,20 @@
 # net-extensions
 
+<div align="center">
+
+[![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions) 
+[![Open Issues](https://img.shields.io/github/issues/lightblueseas/net-extensions.svg?style=flat)](https://github.com/lightblueseas/net-extensions/issues) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions)
+[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/net-extensions.svg)](http://www.javadoc.io/doc/de.alpharogroup/net-extensions)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
+
+</div>
+
 The net-extensions project provides utility classes for net operations.
 
 ## License
 
 The source code comes under the liberal MIT License, making net-extensions great for all types of applications.
-
-## Build status
-
-[![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions)
-
-## Maven Central
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions)
-
-## javadoc
-
-net-extensions [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/net-extensions.svg)](http://www.javadoc.io/doc/de.alpharogroup/net-extensions)
 
 ## Maven dependency
 
@@ -41,7 +39,16 @@ Than you can add the dependency to your dependencies:
 			...
 		</dependencies>
 
+## Semantic Versioning
 
+The versions of silly-collections are maintained with the Semantic Versioning guidelines.
+
+Release version numbers will be incremented in the following format:
+
+`<major>.<minor>.<patch>`
+
+For detailed information on versioning you can visit the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
+	
 ## Want to Help and improve it? ###
 
 The source code for net-extensions are on GitHub. Please feel free to fork and send pull requests!
