@@ -24,6 +24,9 @@
  */
 package de.alpharogroup.net.chat;
 
+/**
+ * The interface {@link ChatUser}.
+ */
 public interface ChatUser
 {
 

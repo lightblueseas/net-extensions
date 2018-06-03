@@ -5,19 +5,19 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.24.0</version>
+		<version>3.11</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>net-extensions</artifactId>
-	<version>4.12.0</version>
+	<version>4.14</version>
 
 	<name>${project.artifactId}</name>
 
 	<description>
 		The net-extensions project provides utility classes for net operations.
 	</description>
-	
+
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -46,7 +46,8 @@
 
 
 	<properties>
-		<test-objects.version>4.16.0</test-objects.version>
+		<test-objects.version>4.26</test-objects.version>
+		<jsch.version>0.1.54</jsch.version>
 	</properties>
 
 	<dependencyManagement>
@@ -58,15 +59,27 @@
 				<version>${test-objects.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>${jsch.version}</version>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>test-objects</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
 			<scope>test</scope>
 		</dependency>
 

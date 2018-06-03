@@ -34,24 +34,47 @@ import org.apache.log4j.Logger;
 
 import lombok.Getter;
 
+/**
+ * The class {@link AbstractClientHandler}.
+ */
+@Getter
 public abstract class AbstractClientHandler implements Runnable
 {
 
+	/** The logger. */
 	private static Logger logger = Logger.getLogger(AbstractClientHandler.class.getName());
-	@Getter
-	private InetAddress inetAddressFromClient = null;
-	@Getter
-	private String clientAddress = null;
-	@Getter
-	private Socket socket = null;
 
+	/** The inet address from client. */
+	private InetAddress inetAddressFromClient;
+
+	/** The client address. */
+	private String clientAddress;
+
+	/** The socket. */
+	private Socket socket;
+
+	/**
+	 * Instantiates a new {@link AbstractClientHandler}
+	 *
+	 * @param s
+	 *            the socket
+	 */
 	public AbstractClientHandler(final Socket s)
 	{
 		socket = s;
 	}
 
+	/**
+	 * Process the given object.
+	 *
+	 * @param object
+	 *            the object
+	 */
 	protected abstract void process(Object object);
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void run()
 	{
@@ -69,12 +92,11 @@ public abstract class AbstractClientHandler implements Runnable
 		}
 		catch (final IOException e)
 		{
-			System.out.println("IO Fehler bei socket: " + e.toString());
-			logger.error("IO Fehler bei socket: " + e.toString(), e);
+			logger.error("An IOException on socket: " + e.toString(), e);
 		}
 		catch (final ClassNotFoundException cnfe)
 		{
-			logger.error("Eine ClassNotFoundException wurde erzeugt:\n " + cnfe.getMessage(), cnfe);
+			logger.error("A ClassNotFoundException is thrown:\n " + cnfe.getMessage(), cnfe);
 		}
 		finally
 		{
@@ -92,10 +114,10 @@ public abstract class AbstractClientHandler implements Runnable
 			}
 			catch (final IOException e)
 			{
-				logger.error("IO Fehler bei socket: " + e.toString(), e);
+				logger.error("An IOException on socket: " + e.toString(), e);
 			}
 		}
-		logger.info("Socket Beended: " + socket);
-	}// end of run()
+		logger.info("Socket finished: " + socket);
+	}
 
 }

@@ -22,54 +22,52 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.proxy;
+package de.alpharogroup.net.url;
 
-import java.net.PasswordAuthentication;
-
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link ProxyAuthenticator}.
+ * The enum {@link Protocol} represents protocols from an url.
  */
-@Getter
-@EqualsAndHashCode(callSuper = true)
-@ToString
-@Builder(toBuilder = true)
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class ProxyAuthenticator extends java.net.Authenticator
+public enum Protocol
 {
 
-	/** The user. */
-	String user;
+	/** The urn protocol. */
+	URN("urn"),
+	/** The jar protocol. */
+	MAILTO("mailto"),
+	/** The jar protocol. */
+	NEWS("mailto"),
+	/** The jar protocol. */
+	FILE("file"),
+	/** The jar protocol. */
+	JAR("jar"),
+	/** The http protocol. */
+	HTTP("http"),
+	/** The https protocol. */
+	HTTPS("https"),
+	/** The nntp protocol. */
+	NNTP("nntp"),
+	/** The ftp protocol. */
+	FTP("ftp"),
+	/** The ear protocol. */
+	EAR("ear"),
+	/** The war protocol. */
+	WAR("war");
 
-	/** The password. */
-	String password;
+	/** The protocol. */
+	@Getter
+	private final String protocol;
 
 	/**
-	 * Instantiates a new proxy authenticator.
-	 *
-	 * @param user
-	 *            the user
-	 * @param password
-	 *            the password
+	 * Instantiates a new {@link Protocol}.
+	 * 
+	 * @param protocol
+	 *            the protocol
 	 */
-	public ProxyAuthenticator(final String user, final String password)
+	private Protocol(final String protocol)
 	{
-		this.user = user;
-		this.password = password;
+		this.protocol = protocol;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected PasswordAuthentication getPasswordAuthentication()
-	{
-		return new PasswordAuthentication(user, password.toCharArray());
-	}
 }

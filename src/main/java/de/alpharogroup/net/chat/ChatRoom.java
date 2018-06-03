@@ -26,17 +26,31 @@ package de.alpharogroup.net.chat;
 
 import java.util.Collection;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
+
+/**
+ * The class {@link ChatRoom}.
+ */
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChatRoom
 {
-	private Collection<ChatUser> chatusers;
 
-	public Collection<ChatUser> getChatusers()
-	{
-		return chatusers;
-	}
-
-	public void setChatusers(final Collection<ChatUser> chatusers)
-	{
-		this.chatusers = chatusers;
-	}
+	/** The chat users. */
+	Collection<ChatUser> chatusers;
 }

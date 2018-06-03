@@ -37,7 +37,7 @@ import org.testng.annotations.Test;
 import de.alpharogroup.BaseTestCase;
 
 /**
- * Test class for the class {@link IPResolver}.
+ * The unit test class for the class {@link IPResolver}.
  *
  * @version 1.0
  * @author Asterios Raptis
@@ -116,8 +116,8 @@ public class IPResolverTest extends BaseTestCase
 		{
 			final String compare = IPResolver.getIP(this.javaSunCom);
 			final String expected = this.sJavaSunCom;
-			this.result = expected.equals(compare);
-			AssertJUnit.assertTrue("", this.result);
+			this.actual = expected.equals(compare);
+			AssertJUnit.assertTrue("", this.actual);
 		}
 		else
 		{
@@ -140,8 +140,8 @@ public class IPResolverTest extends BaseTestCase
 			final byte[] expected = this.byteIpJavaSunCom;
 			for (int i = 0; i < compare.length; i++)
 			{
-				this.result = expected[i] == compare[i];
-				AssertJUnit.assertTrue("", this.result);
+				this.actual = expected[i] == compare[i];
+				AssertJUnit.assertTrue("", this.actual);
 			}
 		}
 		else
@@ -164,8 +164,8 @@ public class IPResolverTest extends BaseTestCase
 	{
 		final String compare = IPResolver.getLocalIP();
 		final String expected = this.localIP;
-		this.result = expected.equals(compare);
-		AssertJUnit.assertTrue("", this.result);
+		this.actual = expected.equals(compare);
+		AssertJUnit.assertTrue("", this.actual);
 	}
 
 	/**
@@ -181,8 +181,8 @@ public class IPResolverTest extends BaseTestCase
 		final byte[] expected = this.localIpAddress;
 		for (int i = 0; i < compare.length; i++)
 		{
-			this.result = expected[i] == compare[i];
-			AssertJUnit.assertTrue("", this.result);
+			this.actual = expected[i] == compare[i];
+			AssertJUnit.assertTrue("", this.actual);
 		}
 	}
 
@@ -199,8 +199,8 @@ public class IPResolverTest extends BaseTestCase
 	{
 		final InetAddress compare = IPResolver.getLocalIPFromServerSocket(10080, 1000);
 		final InetAddress expected = this.localhost;
-		this.result = expected.equals(compare);
-		AssertJUnit.assertTrue("", this.result);
+		this.actual = expected.equals(compare);
+		AssertJUnit.assertTrue("", this.actual);
 	}
 
 	/**
@@ -216,8 +216,8 @@ public class IPResolverTest extends BaseTestCase
 	{
 		final String compare = IPResolver.getLocalIPFromServerSocketAsString();
 		final String expected = this.localIP;
-		this.result = expected.equals(compare);
-		AssertJUnit.assertTrue("", this.result);
+		this.actual = expected.equals(compare);
+		AssertJUnit.assertTrue("", this.actual);
 	}
 
 }
