@@ -7,6 +7,13 @@ Version 4.14-SNAPSHOT
 ADDED:
  
 - this changelog file
+- new eclipse launch scripts created
+- created PULL_REQUEST_TEMPLATE.md file
+- created CODE_OF_CONDUCT.md file
+- created CONTRIBUTING.md file
+- provide new package.html for the javadoc of new and existing packages
+- javadoc improved and extended 
+- existing class URLExtensions and enum Protocol moved from file-worker to this project
 
 CHANGED:
 
