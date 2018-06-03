@@ -50,7 +50,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChatRoom
 {
-	
+
 	/** The chat users. */
 	Collection<ChatUser> chatusers;
 }

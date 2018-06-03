@@ -37,7 +37,7 @@ import lombok.experimental.FieldDefaults;
  * The class {@link ProxyAuthenticator}.
  */
 @Getter
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @ToString
 @Builder(toBuilder = true)
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)

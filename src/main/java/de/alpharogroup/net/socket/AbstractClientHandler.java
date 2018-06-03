@@ -49,14 +49,15 @@ public abstract class AbstractClientHandler implements Runnable
 
 	/** The client address. */
 	private String clientAddress;
-	
+
 	/** The socket. */
 	private Socket socket;
 
 	/**
 	 * Instantiates a new {@link AbstractClientHandler}
 	 *
-	 * @param s the socket
+	 * @param s
+	 *            the socket
 	 */
 	public AbstractClientHandler(final Socket s)
 	{
@@ -66,7 +67,8 @@ public abstract class AbstractClientHandler implements Runnable
 	/**
 	 * Process the given object.
 	 *
-	 * @param object the object
+	 * @param object
+	 *            the object
 	 */
 	protected abstract void process(Object object);
 

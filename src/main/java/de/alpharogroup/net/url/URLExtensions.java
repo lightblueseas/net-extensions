@@ -29,7 +29,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 
 /**
- * The class {@linkplain URLExtensions} provides utility methods for {@link URL}. 
+ * The class {@linkplain URLExtensions} provides utility methods for {@link URL}.
  */
 public class URLExtensions
 {
