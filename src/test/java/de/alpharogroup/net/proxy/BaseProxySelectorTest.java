@@ -29,7 +29,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
-import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.ProxySelector;
 import java.net.SocketAddress;
@@ -39,12 +38,24 @@ import java.util.HashMap;
 
 import org.testng.annotations.Test;
 
+/**
+ * The unit test class for the class {@link BaseProxySelector}.
+ */
 public class BaseProxySelectorTest
 {
 
+	/**
+	 * Test method for {@link BaseProxySelector}
+	 *
+	 * @throws URISyntaxException
+	 *             is thrown if the given string violates RFC&nbsp;2396, as augmented by the above
+	 *             deviations
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
 	@Test(enabled = false)
-	public void testBaseProxySelector()
-		throws URISyntaxException, MalformedURLException, IOException
+	public void testBaseProxySelector() throws URISyntaxException,
+		IOException
 	{
 		// Populate the HashMap (List of proxies)
 		final HashMap<SocketAddress, ProxyDecorator> proxies = new HashMap<>();

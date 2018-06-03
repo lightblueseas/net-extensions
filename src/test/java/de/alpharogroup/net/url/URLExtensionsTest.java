@@ -22,28 +22,38 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net;
+package de.alpharogroup.net.url;
+
+
+import static org.testng.AssertJUnit.assertFalse;
+import static org.testng.AssertJUnit.assertTrue;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.testng.annotations.Test;
 
-import de.alpharogroup.net.socket.SocketExtensions;
-
 /**
- * The unit test class for the class {@link SocketExtensions}.
+ * The unit test class for the class {@link URLExtensions}.
  */
-public class SocketExtensionsTest
+public class URLExtensionsTest 
 {
 
 	/**
-	 * Test method for {@link SocketExtensions#available(int)}
+	 * Test method for {@link URLExtensions#isJar(URL)}
+	 *
+	 * @throws MalformedURLException
+	 *             is thrown if no protocol is specified, or an unknown protocol is found, or
+	 *             {@code spec} is {@code null}.
+	 * @see java.net.URL#URL(java.net.URL, java.lang.String)
 	 */
-	@Test(enabled = false)
-	public void testAvailableInt()
+	@Test
+	public void testIsJar() throws MalformedURLException
 	{
-		boolean port25Available = SocketExtensions.available(25);
-		System.out.println(port25Available);
-		port25Available = SocketExtensions.available(1024);
-		System.out.println(port25Available);
+		final URL myURL = new URL("http://example.com/");
+		assertFalse(URLExtensions.isJar(myURL));
+		final URL jarUrl = new URL("jar:file:/home/root/jdk/rt.jar!/test.xml");
+		assertTrue(URLExtensions.isJar(jarUrl));
 	}
 
 }
