@@ -10,7 +10,7 @@
 
 </div>
 
-The net-extensions project provides utility classes for net operations.
+The net-extensions project provides utility classes for network operations.
 
 ## License
 
@@ -26,7 +26,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 Than you can add the dependency to your dependencies:
 
 		<!-- NET-EXTENSIONS version -->
-		<net-extensions.version>4.12.0</net-extensions.version>
+		<net-extensions.version>4.14</net-extensions.version>
 
 		<dependencies>
 			...
