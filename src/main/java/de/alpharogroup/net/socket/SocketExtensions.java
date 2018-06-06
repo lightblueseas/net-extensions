@@ -208,7 +208,7 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
-	 *             the class not found exception
+	 *             is thrown if a class of a serialized object cannot be found
 	 */
 	public static Object readObject(final InetAddress inetAddress, final int port)
 		throws IOException, ClassNotFoundException
@@ -225,7 +225,7 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
-	 *             the class not found exception
+	 *             occurs if a given class cannot be located by the specified class loader
 	 */
 	public static Object readObject(final int port) throws IOException, ClassNotFoundException
 	{
@@ -260,9 +260,9 @@ public class SocketExtensions
 	 *            the socket to read.
 	 * @return the object
 	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred
 	 * @throws ClassNotFoundException
-	 *             the class not found exception
+	 *             is thrown if a class of a serialized object cannot be found
 	 */
 	public static Object readObject(final Socket clientSocket)
 		throws IOException, ClassNotFoundException
@@ -327,7 +327,7 @@ public class SocketExtensions
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
-	 *             the class not found exception
+	 *             is thrown if a class of a serialized object cannot be found
 	 */
 	public static Object readObject(final String serverName, final int port)
 		throws IOException, ClassNotFoundException
