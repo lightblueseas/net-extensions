@@ -6,6 +6,7 @@ Version 4.15-SNAPSHOT
 
 CHANGED:
 
+- update of parent version to 4
 - update of test-objects version to 4.28
 
 Version 4.14
