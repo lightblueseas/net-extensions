@@ -83,13 +83,11 @@ public final class ExceptionExtensions
 	}
 
 	/**
-	 * Gets the stacktrace as string.
+	 * Gets the stacktrace as string
 	 *
 	 * @param throwable
 	 *            the throwable
-	 * @return the stacktrace as string.
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 * @return the stacktrace as string
 	 */
 	public static String getStackTraceQueitly(final Throwable throwable)
 	{
