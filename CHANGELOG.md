@@ -8,6 +8,7 @@ CHANGED:
 
 - update of parent version to 4.5
 - update of test-objects version to 5
+- remove logging dependencies
 
 
 Version 4.14
