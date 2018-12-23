@@ -1,13 +1,14 @@
 ## Change log
 ----------------------
 
-Version 4.15-SNAPSHOT
+Version 4.15
 -------------
 
 CHANGED:
 
-- update of parent version to 4
-- update of test-objects version to 4.28
+- update of parent version to 4.5
+- update of test-objects version to 5
+
 
 Version 4.14
 -------------
