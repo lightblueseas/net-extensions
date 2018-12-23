@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>net-extensions</artifactId>
-	<version>4.15</version>
+	<version>5</version>
 
 	<name>${project.artifactId}</name>
 
