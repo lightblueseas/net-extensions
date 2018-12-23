@@ -10,7 +10,6 @@ CHANGED:
 - update of test-objects version to 5
 - remove logging dependencies
 
-
 Version 4.14
 -------------
 
