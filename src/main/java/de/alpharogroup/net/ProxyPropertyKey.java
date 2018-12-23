@@ -35,20 +35,8 @@ import lombok.Getter;
 public enum ProxyPropertyKey
 {
 
-	/** The http proxy host. */
-	HTTP_PROXY_HOST("http.proxyHost"),
-
-	/** The key for the http proxy port. */
-	HTTP_PROXY_PORT("http.proxyPort"),
-
-	/** The key for the http non proxy hosts. */
-	HTTP_NON_PROXY_HOSTS("http.nonProxyHosts"),
-
-	/** The key for the socks proxy host. */
-	SOCKS_PROXY_HOST("socksProxyHost"),
-
-	/** The key for the socks proxy port. */
-	SOCKS_PROXY_PORT("socksProxyPort"),
+	/** The key for the ftp non proxy hosts. */
+	FTP_NON_PROXY_HOSTS("ftp.nonProxyHosts"),
 
 	/** The key for the ftp proxy host. */
 	FTP_PROXY_HOST("ftp.proxyHost"),
@@ -56,8 +44,20 @@ public enum ProxyPropertyKey
 	/** The key for the ftp proxy port. */
 	FTP_PROXY_PORT("ftp.proxyPort"),
 
-	/** The key for the ftp non proxy hosts. */
-	FTP_NON_PROXY_HOSTS("ftp.nonProxyHosts");
+	/** The key for the http non proxy hosts. */
+	HTTP_NON_PROXY_HOSTS("http.nonProxyHosts"),
+
+	/** The http proxy host. */
+	HTTP_PROXY_HOST("http.proxyHost"),
+
+	/** The key for the http proxy port. */
+	HTTP_PROXY_PORT("http.proxyPort"),
+
+	/** The key for the socks proxy host. */
+	SOCKS_PROXY_HOST("socksProxyHost"),
+
+	/** The key for the socks proxy port. */
+	SOCKS_PROXY_PORT("socksProxyPort");
 
 	/** The value. */
 	@Getter

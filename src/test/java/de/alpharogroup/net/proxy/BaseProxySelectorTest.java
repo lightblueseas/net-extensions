@@ -54,8 +54,7 @@ public class BaseProxySelectorTest
 	 *             Signals that an I/O exception has occurred.
 	 */
 	@Test(enabled = false)
-	public void testBaseProxySelector() throws URISyntaxException,
-		IOException
+	public void testBaseProxySelector() throws URISyntaxException, IOException
 	{
 		// Populate the HashMap (List of proxies)
 		final HashMap<SocketAddress, ProxyDecorator> proxies = new HashMap<>();

@@ -44,11 +44,11 @@ import lombok.experimental.FieldDefaults;
 public class ProxyAuthenticator extends java.net.Authenticator
 {
 
-	/** The user. */
-	String user;
-
 	/** The password. */
 	String password;
+
+	/** The user. */
+	String user;
 
 	/**
 	 * Instantiates a new proxy authenticator.

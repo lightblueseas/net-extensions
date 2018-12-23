@@ -41,17 +41,17 @@ public class ProxyDecorator implements Serializable
 	 */
 	private static final long serialVersionUID = -5551993083532366206L;
 
+	/** The failed count. */
+	private int failedCount = 0;
+
 	/** The proxy. */
 	private final Proxy proxy;
-
-	/** The socket address. */
-	private final InetSocketAddress socketAddress;
 
 	/** The proxy type. */
 	private final Type proxyType;
 
-	/** The failed count. */
-	private int failedCount = 0;
+	/** The socket address. */
+	private final InetSocketAddress socketAddress;
 
 	/**
 	 * Instantiates a new {@link ProxyDecorator} object.

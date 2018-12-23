@@ -32,8 +32,10 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
 
-import org.apache.log4j.Logger;
+import de.alpharogroup.net.throwables.ExceptionExtensions;
+import lombok.extern.java.Log;
 
 /**
  * Helper class for handling Sockets.
@@ -41,11 +43,9 @@ import org.apache.log4j.Logger;
  * @version 1.0
  * @author Asterios Raptis
  */
+@Log
 public class SocketExtensions
 {
-
-	/** The Constant logger. */
-	private static final Logger LOGGER = Logger.getLogger(SocketExtensions.class.getName());
 
 	/**
 	 * Checks if the given port at localhost is available.
@@ -85,7 +85,7 @@ public class SocketExtensions
 		{
 			if (!closeClientSocket(socket))
 			{
-				LOGGER.error("Socket could not be closed on host " + host + " on port " + port);
+				log.severe("Socket could not be closed on host " + host + " on port " + port);
 			}
 		}
 	}
@@ -122,7 +122,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			LOGGER.error("IOException occured by trying to close the client socket.", e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			closed = false;
 		}
 		finally
@@ -133,7 +133,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				LOGGER.error("IOException occured by trying to close the client socket.", e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 				closed = false;
 			}
 		}
@@ -160,7 +160,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			LOGGER.error("IOException occured by trying to close the server socket.", e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			closed = false;
 		}
 		finally
@@ -174,7 +174,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				LOGGER.error("IOException occured by trying to close the server socket.", e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 				closed = false;
 			}
 		}
@@ -287,13 +287,12 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			LOGGER.error("IOException occured by trying to read the object.", e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			throw e;
 		}
 		catch (final ClassNotFoundException e)
 		{
-			LOGGER.error(
-				"ClassNotFoundException occured by trying to read the object from the socket.", e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			throw e;
 		}
 		finally
@@ -308,7 +307,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				LOGGER.error("IOException occured by trying to close the socket.", e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 				throw e;
 			}
 		}
@@ -365,7 +364,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			LOGGER.error("IOException occured by trying to write the object.", e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			throw e;
 		}
 		finally
@@ -380,7 +379,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				LOGGER.error("IOException occured by trying to close the socket.", e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 				throw e;
 			}
 		}

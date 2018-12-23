@@ -27,29 +27,28 @@ package de.alpharogroup.net.socket;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
 
-import org.apache.log4j.Logger;
-
+import de.alpharogroup.net.throwables.ExceptionExtensions;
 import lombok.Getter;
+import lombok.extern.java.Log;
 
 /**
  * The class {@link SimpleSocketServer}.
  */
 @Getter
+@Log
 public class SimpleSocketServer implements Runnable
 {
-
-	/** The log4j Logger */
-	private Logger logger = Logger.getLogger(this.getClass());
-
-	/** The server socket. */
-	private final ServerSocket serverSocket;
 
 	/** The client socket. */
 	private Socket clientSocket;
 
 	/** The server port. */
 	private int port;
+
+	/** The server socket. */
+	private final ServerSocket serverSocket;
 
 	public SimpleSocketServer(final int ports) throws IOException
 	{
@@ -102,7 +101,7 @@ public class SimpleSocketServer implements Runnable
 				/*
 				 * Log the error of the server if IO fails. Something bad has happened
 				 */
-				logger.error("Could not accept " + e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			}
 		}
 	}

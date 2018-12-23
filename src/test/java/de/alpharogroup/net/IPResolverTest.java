@@ -45,23 +45,23 @@ import de.alpharogroup.BaseTestCase;
 public class IPResolverTest extends BaseTestCase
 {
 
+	/** The byte ip for the ip from "java.sun.com". */
+	byte[] byteIpJavaSunCom;
+
+	/** The InetAddress for the ip from "java.sun.com". */
+	InetAddress javaSunCom;
+
+	/** The localhost. */
+	InetAddress localhost;
+
 	/** The local ip. */
 	String localIP;
 
 	/** The local ip address. */
 	byte[] localIpAddress;
 
-	/** The localhost. */
-	InetAddress localhost;
-
 	/** The String for the ip from "java.sun.com". */
 	String sJavaSunCom;
-
-	/** The byte ip for the ip from "java.sun.com". */
-	byte[] byteIpJavaSunCom;
-
-	/** The InetAddress for the ip from "java.sun.com". */
-	InetAddress javaSunCom;
 
 	/** The socket for the ip from "java.sun.com". */
 	Socket socketJavaSunCom;

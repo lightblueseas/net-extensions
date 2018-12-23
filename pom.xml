@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4</version>
+		<version>4.5</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -46,7 +46,7 @@
 
 
 	<properties>
-		<test-objects.version>4.28</test-objects.version>
+		<test-objects.version>5</test-objects.version>
 		<jsch.version>0.1.54</jsch.version>
 	</properties>
 

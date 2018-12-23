@@ -36,7 +36,7 @@ import org.testng.annotations.Test;
 /**
  * The unit test class for the class {@link URLExtensions}.
  */
-public class URLExtensionsTest 
+public class URLExtensionsTest
 {
 
 	/**

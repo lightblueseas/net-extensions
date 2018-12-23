@@ -29,26 +29,25 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.logging.Level;
 
-import org.apache.log4j.Logger;
-
+import de.alpharogroup.net.throwables.ExceptionExtensions;
 import lombok.Getter;
+import lombok.extern.java.Log;
 
 /**
  * The class {@link AbstractClientHandler}.
  */
 @Getter
+@Log
 public abstract class AbstractClientHandler implements Runnable
 {
 
-	/** The logger. */
-	private static Logger logger = Logger.getLogger(AbstractClientHandler.class.getName());
+	/** The client address. */
+	private String clientAddress;
 
 	/** The inet address from client. */
 	private InetAddress inetAddressFromClient;
-
-	/** The client address. */
-	private String clientAddress;
 
 	/** The socket. */
 	private Socket socket;
@@ -92,11 +91,11 @@ public abstract class AbstractClientHandler implements Runnable
 		}
 		catch (final IOException e)
 		{
-			logger.error("An IOException on socket: " + e.toString(), e);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 		}
 		catch (final ClassNotFoundException cnfe)
 		{
-			logger.error("A ClassNotFoundException is thrown:\n " + cnfe.getMessage(), cnfe);
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(cnfe));
 		}
 		finally
 		{
@@ -114,10 +113,10 @@ public abstract class AbstractClientHandler implements Runnable
 			}
 			catch (final IOException e)
 			{
-				logger.error("An IOException on socket: " + e.toString(), e);
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
 			}
 		}
-		logger.info("Socket finished: " + socket);
+		log.info("Socket finished: " + socket);
 	}
 
 }
