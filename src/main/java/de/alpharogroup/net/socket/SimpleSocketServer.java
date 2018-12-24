@@ -29,7 +29,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import de.alpharogroup.net.throwables.ExceptionExtensions;
+import de.alpharogroup.throwable.ThrowableExtensions;
 import lombok.Getter;
 import lombok.extern.java.Log;
 
@@ -101,7 +101,7 @@ public class SimpleSocketServer implements Runnable
 				/*
 				 * Log the error of the server if IO fails. Something bad has happened
 				 */
-				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			}
 		}
 	}

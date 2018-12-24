@@ -34,7 +34,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import de.alpharogroup.net.throwables.ExceptionExtensions;
+import de.alpharogroup.throwable.ThrowableExtensions;
 import lombok.extern.java.Log;
 
 /**
@@ -122,7 +122,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			closed = false;
 		}
 		finally
@@ -133,7 +133,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 				closed = false;
 			}
 		}
@@ -160,7 +160,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			closed = false;
 		}
 		finally
@@ -174,7 +174,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 				closed = false;
 			}
 		}
@@ -287,12 +287,12 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			throw e;
 		}
 		catch (final ClassNotFoundException e)
 		{
-			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			throw e;
 		}
 		finally
@@ -307,7 +307,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 				throw e;
 			}
 		}
@@ -364,7 +364,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 			throw e;
 		}
 		finally
@@ -379,7 +379,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ExceptionExtensions.getStackTraceQueitly(e));
+				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
 				throw e;
 			}
 		}

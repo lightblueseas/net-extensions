@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -26,28 +27,30 @@
 		</license>
 	</licenses>
 
-	<url>https://github.com/lightblueseas/net-extensions</url>
+	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
 	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/net-extensions.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/net-extensions.git</developerConnection>
-		<url>git:@github.com:lightblueseas/net-extensions.git</url>
+		<connection>scm:git:git:@github.com:lightblueseas/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/${project.artifactId}.git</developerConnection>
+		<url>git:@github.com:lightblueseas/${project.artifactId}.git</url>
 	</scm>
 
 	<ciManagement>
 		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/net-extensions</url>
+		<url>https://travis-ci.org/lightblueseas/${project.artifactId}</url>
 	</ciManagement>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/lightblueseas/net-extensions/issues</url>
+		<url>https://github.com/lightblueseas/${project.artifactId}/issues</url>
 	</issueManagement>
 
 
 	<properties>
 		<test-objects.version>5</test-objects.version>
 		<jsch.version>0.1.54</jsch.version>
+		<!-- THROW-ABLE version -->
+		<throw-able.version>1</throw-able.version>
 	</properties>
 
 	<dependencyManagement>
@@ -64,12 +67,23 @@
 				<artifactId>jsch</artifactId>
 				<version>${jsch.version}</version>
 			</dependency>
+			<!-- THROW-ABLE DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>throw-able</artifactId>
+				<version>${throw-able.version}</version>
+			</dependency>
 
 		</dependencies>
 
 	</dependencyManagement>
 
 	<dependencies>
+		<!-- THROW-ABLE DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>throw-able</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
