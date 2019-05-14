@@ -4,6 +4,15 @@
 Version 5.1-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new method that resolves all InetAddress objects from a sub net mask
+
+CHANGED:
+
+- update of parent version to 5
+- update of test-objects version to 5.2
+
 Version 5
 -------------
 

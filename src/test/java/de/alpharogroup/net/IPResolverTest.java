@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
 
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
@@ -45,11 +46,11 @@ import de.alpharogroup.BaseTestCase;
 public class IPResolverTest extends BaseTestCase
 {
 
-	/** The byte ip for the ip from "java.sun.com". */
-	byte[] byteIpJavaSunCom;
+	/** The byte ip for the ip from "oracle.com". */
+	byte[] byteIpOracleCom;
 
 	/** The InetAddress for the ip from "java.sun.com". */
-	InetAddress javaSunCom;
+	InetAddress oracleCom;
 
 	/** The localhost. */
 	InetAddress localhost;
@@ -82,10 +83,10 @@ public class IPResolverTest extends BaseTestCase
 		this.sJavaSunCom = "72.5.124.55";
 		try
 		{
-			this.javaSunCom = InetAddress.getByName("java.sun.com");
-			this.byteIpJavaSunCom = this.javaSunCom.getAddress();
+			this.oracleCom = InetAddress.getByName("oracle.com");
+			this.byteIpOracleCom = this.oracleCom.getAddress();
 			final int port = 3129;
-			this.socketJavaSunCom = new Socket(this.javaSunCom, port);
+			this.socketJavaSunCom = new Socket(this.oracleCom, port);
 		}
 		catch (final UnknownHostException e)
 		{
@@ -107,14 +108,24 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
+	 * Test method for {@link IPResolver#getAllClients(String)}
+	 * @throws IOException
+	 */
+	@Test(enabled = false)
+	public void test() throws IOException {
+		List<InetAddress> allClients = IPResolver.getAllClients("192.168.178.");
+		System.out.println(allClients);
+	}
+
+	/**
 	 * Test method for {@link de.alpharogroup.net.IPResolver#getIP(java.net.InetAddress)}.
 	 */
 	@Test(enabled = false)
 	public void testGetIP()
 	{
-		if (this.javaSunCom != null)
+		if (this.oracleCom != null)
 		{
-			final String compare = IPResolver.getIP(this.javaSunCom);
+			final String compare = IPResolver.getIP(this.oracleCom);
 			final String expected = this.sJavaSunCom;
 			this.actual = expected.equals(compare);
 			AssertJUnit.assertTrue("", this.actual);
@@ -134,10 +145,13 @@ public class IPResolverTest extends BaseTestCase
 	@Test(enabled = false)
 	public void testGetIPAsByte()
 	{
-		if (this.javaSunCom != null)
+		byte[] compare;
+
+		compare = IPResolver.getIPAsByte(this.localhost);
+		if (this.oracleCom != null)
 		{
-			final byte[] compare = IPResolver.getIPAsByte(this.javaSunCom);
-			final byte[] expected = this.byteIpJavaSunCom;
+			compare = IPResolver.getIPAsByte(this.oracleCom);
+			final byte[] expected = this.byteIpOracleCom;
 			for (int i = 0; i < compare.length; i++)
 			{
 				this.actual = expected[i] == compare[i];
@@ -166,11 +180,13 @@ public class IPResolverTest extends BaseTestCase
 		final String expected = this.localIP;
 		this.actual = expected.equals(compare);
 		AssertJUnit.assertTrue("", this.actual);
+		String canonicalHostName = this.localhost.getCanonicalHostName();
+		System.out.println(canonicalHostName);
 	}
 
 	/**
 	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPAsByte()}.
-	 * 
+	 *
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
 	 */
@@ -188,7 +204,7 @@ public class IPResolverTest extends BaseTestCase
 
 	/**
 	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocket(int, int)}.
-	 * 
+	 *
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 * @throws UnknownHostException
@@ -205,7 +221,7 @@ public class IPResolverTest extends BaseTestCase
 
 	/**
 	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocketAsString()}.
-	 * 
+	 *
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 * @throws UnknownHostException

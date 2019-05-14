@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.alpharogroup.net.socket.SocketExtensions;
 
@@ -39,6 +41,27 @@ import de.alpharogroup.net.socket.SocketExtensions;
  */
 public class IPResolver
 {
+
+	/**
+	 * Gets all the clients from the given net mask
+	 *
+	 * @param netmask the net mask
+	 * @return all the clients from the given net mask
+	 * @throws IOException Signals that an I/O exception has occurred
+	 */
+	public static List<InetAddress> getAllClients(String netmask) throws IOException
+	{
+		List<InetAddress> availableIps = new ArrayList<>();
+		for (int i = 1; i <= 255; i++)
+		{
+			InetAddress inetAddress = InetAddress.getByName(netmask + i);
+			if (inetAddress.isReachable(2000))
+			{
+				availableIps.add(inetAddress);
+			}
+		}
+		return availableIps;
+	}
 
 	/**
 	 * Gets the ip address from the given InetAddress object as a String.
@@ -108,7 +131,7 @@ public class IPResolver
 	 * @param port
 	 *            the local TCP port
 	 * @param backlog
-	 *            the listen backlog
+	 *            requested maximum length of the queue of incoming connections
 	 * @return Returns the InetAddress object from the local host from a ServerSocket object.
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
