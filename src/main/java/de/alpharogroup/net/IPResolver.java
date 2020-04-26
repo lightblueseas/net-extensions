@@ -45,9 +45,11 @@ public class IPResolver
 	/**
 	 * Gets all the clients from the given net mask
 	 *
-	 * @param netmask the net mask
+	 * @param netmask
+	 *            the net mask
 	 * @return all the clients from the given net mask
-	 * @throws IOException Signals that an I/O exception has occurred
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred
 	 */
 	public static List<InetAddress> getAllClients(String netmask) throws IOException
 	{

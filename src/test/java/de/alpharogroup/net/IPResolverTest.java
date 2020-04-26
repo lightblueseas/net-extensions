@@ -49,9 +49,6 @@ public class IPResolverTest extends BaseTestCase
 	/** The byte ip for the ip from "oracle.com". */
 	byte[] byteIpOracleCom;
 
-	/** The InetAddress for the ip from "java.sun.com". */
-	InetAddress oracleCom;
-
 	/** The localhost. */
 	InetAddress localhost;
 
@@ -60,6 +57,9 @@ public class IPResolverTest extends BaseTestCase
 
 	/** The local ip address. */
 	byte[] localIpAddress;
+
+	/** The InetAddress for the ip from "java.sun.com". */
+	InetAddress oracleCom;
 
 	/** The String for the ip from "java.sun.com". */
 	String sJavaSunCom;
@@ -109,10 +109,12 @@ public class IPResolverTest extends BaseTestCase
 
 	/**
 	 * Test method for {@link IPResolver#getAllClients(String)}
+	 * 
 	 * @throws IOException
 	 */
 	@Test(enabled = false)
-	public void test() throws IOException {
+	public void test() throws IOException
+	{
 		List<InetAddress> allClients = IPResolver.getAllClients("192.168.178.");
 		System.out.println(allClients);
 	}
