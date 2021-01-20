@@ -24,7 +24,6 @@
  */
 package de.alpharogroup.net.url;
 
-
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
