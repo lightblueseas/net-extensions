@@ -22,28 +22,12 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net;
-
-import org.testng.annotations.Test;
-
-import de.alpharogroup.net.socket.SocketExtensions;
+package io.github.astrapi69.net.chat;
 
 /**
- * The unit test class for the class {@link SocketExtensions}.
+ * The interface {@link ChatUser}.
  */
-public class SocketExtensionsTest
+public interface ChatUser
 {
-
-	/**
-	 * Test method for {@link SocketExtensions#available(int)}
-	 */
-	@Test(enabled = false)
-	public void testAvailableInt()
-	{
-		boolean port25Available = SocketExtensions.available(25);
-		System.out.println(port25Available);
-		port25Available = SocketExtensions.available(1024);
-		System.out.println(port25Available);
-	}
 
 }

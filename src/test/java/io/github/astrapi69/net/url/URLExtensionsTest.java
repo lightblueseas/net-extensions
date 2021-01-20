@@ -22,52 +22,37 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.url;
+package io.github.astrapi69.net.url;
 
-import lombok.Getter;
+import static org.testng.AssertJUnit.assertFalse;
+import static org.testng.AssertJUnit.assertTrue;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.testng.annotations.Test;
 
 /**
- * The enum {@link Protocol} represents protocols from an url.
+ * The unit test class for the class {@link URLExtensions}.
  */
-public enum Protocol
+public class URLExtensionsTest
 {
 
-	/** The ear protocol. */
-	EAR("ear"),
-	/** The jar protocol. */
-	FILE("file"),
-	/** The ftp protocol. */
-	FTP("ftp"),
-	/** The http protocol. */
-	HTTP("http"),
-	/** The https protocol. */
-	HTTPS("https"),
-	/** The jar protocol. */
-	JAR("jar"),
-	/** The jar protocol. */
-	MAILTO("mailto"),
-	/** The jar protocol. */
-	NEWS("mailto"),
-	/** The nntp protocol. */
-	NNTP("nntp"),
-	/** The urn protocol. */
-	URN("urn"),
-	/** The war protocol. */
-	WAR("war");
-
-	/** The protocol. */
-	@Getter
-	private final String protocol;
-
 	/**
-	 * Instantiates a new {@link Protocol}.
-	 * 
-	 * @param protocol
-	 *            the protocol
+	 * Test method for {@link URLExtensions#isJar(URL)}
+	 *
+	 * @throws MalformedURLException
+	 *             is thrown if no protocol is specified, or an unknown protocol is found, or
+	 *             {@code spec} is {@code null}.
+	 * @see java.net.URL#URL(java.net.URL, java.lang.String)
 	 */
-	private Protocol(final String protocol)
+	@Test
+	public void testIsJar() throws MalformedURLException
 	{
-		this.protocol = protocol;
+		final URL myURL = new URL("http://example.com/");
+		assertFalse(URLExtensions.isJar(myURL));
+		final URL jarUrl = new URL("jar:file:/home/root/jdk/rt.jar!/test.xml");
+		assertTrue(URLExtensions.isJar(jarUrl));
 	}
 
 }

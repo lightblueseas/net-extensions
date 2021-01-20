@@ -22,35 +22,52 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.chat;
+package io.github.astrapi69.net.url;
 
-import java.util.Collection;
-
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link ChatRoom}.
+ * The enum {@link Protocol} represents protocols from an url.
  */
-
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public class ChatRoom
+public enum Protocol
 {
 
-	/** The chat users. */
-	Collection<ChatUser> chatusers;
+	/** The ear protocol. */
+	EAR("ear"),
+	/** The jar protocol. */
+	FILE("file"),
+	/** The ftp protocol. */
+	FTP("ftp"),
+	/** The http protocol. */
+	HTTP("http"),
+	/** The https protocol. */
+	HTTPS("https"),
+	/** The jar protocol. */
+	JAR("jar"),
+	/** The jar protocol. */
+	MAILTO("mailto"),
+	/** The jar protocol. */
+	NEWS("mailto"),
+	/** The nntp protocol. */
+	NNTP("nntp"),
+	/** The urn protocol. */
+	URN("urn"),
+	/** The war protocol. */
+	WAR("war");
+
+	/** The protocol. */
+	@Getter
+	private final String protocol;
+
+	/**
+	 * Instantiates a new {@link Protocol}.
+	 * 
+	 * @param protocol
+	 *            the protocol
+	 */
+	private Protocol(final String protocol)
+	{
+		this.protocol = protocol;
+	}
+
 }

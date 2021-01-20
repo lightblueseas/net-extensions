@@ -22,12 +22,54 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.chat;
+package io.github.astrapi69.net.proxy;
+
+import java.net.PasswordAuthentication;
+
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 /**
- * The interface {@link ChatUser}.
+ * The class {@link ProxyAuthenticator}.
  */
-public interface ChatUser
+@Getter
+@EqualsAndHashCode(callSuper = true)
+@ToString
+@Builder(toBuilder = true)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
+public class ProxyAuthenticator extends java.net.Authenticator
 {
 
+	/** The password. */
+	String password;
+
+	/** The user. */
+	String user;
+
+	/**
+	 * Instantiates a new proxy authenticator.
+	 *
+	 * @param user
+	 *            the user
+	 * @param password
+	 *            the password
+	 */
+	public ProxyAuthenticator(final String user, final String password)
+	{
+		this.user = user;
+		this.password = password;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected PasswordAuthentication getPasswordAuthentication()
+	{
+		return new PasswordAuthentication(user, password.toCharArray());
+	}
 }

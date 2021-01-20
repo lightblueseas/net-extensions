@@ -22,54 +22,35 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.proxy;
+package io.github.astrapi69.net.chat;
 
-import java.net.PasswordAuthentication;
+import java.util.Collection;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link ProxyAuthenticator}.
+ * The class {@link ChatRoom}.
  */
+
 @Getter
-@EqualsAndHashCode(callSuper = true)
+@Setter
+@EqualsAndHashCode
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder(toBuilder = true)
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class ProxyAuthenticator extends java.net.Authenticator
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class ChatRoom
 {
 
-	/** The password. */
-	String password;
-
-	/** The user. */
-	String user;
-
-	/**
-	 * Instantiates a new proxy authenticator.
-	 *
-	 * @param user
-	 *            the user
-	 * @param password
-	 *            the password
-	 */
-	public ProxyAuthenticator(final String user, final String password)
-	{
-		this.user = user;
-		this.password = password;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected PasswordAuthentication getPasswordAuthentication()
-	{
-		return new PasswordAuthentication(user, password.toCharArray());
-	}
+	/** The chat users. */
+	Collection<ChatUser> chatusers;
 }

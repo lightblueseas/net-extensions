@@ -1,17 +1,23 @@
 ## Change log
 ----------------------
 
-Version 5.1-SNAPSHOT
+Version 5.1
 -------------
 
 ADDED:
- 
+
+- gradle as build system
 - new method that resolves all InetAddress objects from a sub net mask
 
 CHANGED:
 
-- update of parent version to 5
-- update of test-objects version to 5.2
+- changed to new package io.github.astrapi69
+- changed project nature from maven to gradle nature
+- update of dependency throw-able  to new version 1.4
+- update of test dependency test-objects version to 5.3
+- removed maven related files
+- removed of junit dependency
+- removed of mockito-core dependency
 
 Version 5
 -------------

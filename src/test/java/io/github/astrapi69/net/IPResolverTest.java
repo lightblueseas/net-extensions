@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net;
+package io.github.astrapi69.net;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -120,7 +120,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getIP(java.net.InetAddress)}.
+	 * Test method for {@link IPResolver#getIP(java.net.InetAddress)}.
 	 */
 	@Test(enabled = false)
 	public void testGetIP()
@@ -142,7 +142,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getIPAsByte(java.net.InetAddress)}.
+	 * Test method for {@link IPResolver#getIPAsByte(java.net.InetAddress)}.
 	 */
 	@Test(enabled = false)
 	public void testGetIPAsByte()
@@ -170,7 +170,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIP()}.
+	 * Test method for {@link IPResolver#getLocalIP()}.
 	 *
 	 * @throws UnknownHostException
 	 *             the unknown host exception
@@ -187,7 +187,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPAsByte()}.
+	 * Test method for {@link IPResolver#getLocalIPAsByte()}.
 	 *
 	 * @throws UnknownHostException
 	 *             is thrown if the local host name could not be resolved into an address.
@@ -205,7 +205,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocket(int, int)}.
+	 * Test method for {@link IPResolver#getLocalIPFromServerSocket(int, int)}.
 	 *
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
@@ -222,7 +222,7 @@ public class IPResolverTest extends BaseTestCase
 	}
 
 	/**
-	 * Test method for {@link de.alpharogroup.net.IPResolver#getLocalIPFromServerSocketAsString()}.
+	 * Test method for {@link IPResolver#getLocalIPFromServerSocketAsString()}.
 	 *
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.

@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.socket;
+package io.github.astrapi69.net.socket;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -33,7 +33,7 @@ import java.util.logging.Level;
 
 import lombok.Getter;
 import lombok.extern.java.Log;
-import de.alpharogroup.throwable.ExceptionExtensions;
+import io.github.astrapi69.throwable.ExceptionExtensions;
 
 /**
  * The class {@link AbstractClientHandler}.

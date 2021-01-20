@@ -22,37 +22,56 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.net.url;
+package io.github.astrapi69.net;
 
-import static org.testng.AssertJUnit.assertFalse;
-import static org.testng.AssertJUnit.assertTrue;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.testng.annotations.Test;
+import lombok.Getter;
 
 /**
- * The unit test class for the class {@link URLExtensions}.
+ * The enum {@link ProxyPropertyKey} holds system property keys for proxies.
+ * 
+ * @see <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/net/properties.html">Oracle
+ *      net properties</a>
  */
-public class URLExtensionsTest
+public enum ProxyPropertyKey
 {
 
+	/** The key for the ftp non proxy hosts. */
+	FTP_NON_PROXY_HOSTS("ftp.nonProxyHosts"),
+
+	/** The key for the ftp proxy host. */
+	FTP_PROXY_HOST("ftp.proxyHost"),
+
+	/** The key for the ftp proxy port. */
+	FTP_PROXY_PORT("ftp.proxyPort"),
+
+	/** The key for the http non proxy hosts. */
+	HTTP_NON_PROXY_HOSTS("http.nonProxyHosts"),
+
+	/** The http proxy host. */
+	HTTP_PROXY_HOST("http.proxyHost"),
+
+	/** The key for the http proxy port. */
+	HTTP_PROXY_PORT("http.proxyPort"),
+
+	/** The key for the socks proxy host. */
+	SOCKS_PROXY_HOST("socksProxyHost"),
+
+	/** The key for the socks proxy port. */
+	SOCKS_PROXY_PORT("socksProxyPort");
+
+	/** The value. */
+	@Getter
+	private String value;
+
 	/**
-	 * Test method for {@link URLExtensions#isJar(URL)}
+	 * Instantiates a new {@link ProxyPropertyKey} object.
 	 *
-	 * @throws MalformedURLException
-	 *             is thrown if no protocol is specified, or an unknown protocol is found, or
-	 *             {@code spec} is {@code null}.
-	 * @see java.net.URL#URL(java.net.URL, java.lang.String)
+	 * @param value
+	 *            the value
 	 */
-	@Test
-	public void testIsJar() throws MalformedURLException
+	ProxyPropertyKey(String value)
 	{
-		final URL myURL = new URL("http://example.com/");
-		assertFalse(URLExtensions.isJar(myURL));
-		final URL jarUrl = new URL("jar:file:/home/root/jdk/rt.jar!/test.xml");
-		assertTrue(URLExtensions.isJar(jarUrl));
+		this.value = value;
 	}
 
 }

@@ -186,7 +186,7 @@ gradle.startParameter.excludedTaskNames += "licenseTest"
 dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    compile("de.alpharogroup:throw-able:$throwAbleVersion")
+    implementation("io.github.astrapi69:throw-able:$throwAbleVersion")
     testImplementation("de.alpharogroup:test-objects:$testObjectsVersion")
     testImplementation("com.jcraft:jsch:$jschVersion")
     testImplementation("org.testng:testng:$testngVersion")

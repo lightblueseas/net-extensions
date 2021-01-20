@@ -4,8 +4,8 @@
 
 [![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions) 
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/net-extensions.svg?style=flat)](https://github.com/lightblueseas/net-extensions/issues) 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions)
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/net-extensions.svg)](http://www.javadoc.io/doc/de.alpharogroup/net-extensions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/net-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/net-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 </div>
@@ -21,7 +21,7 @@ The source code comes under the liberal MIT License, making net-extensions great
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~net-extensions~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~net-extensions~~~) for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of net-extensions:
 
@@ -30,7 +30,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- NET-EXTENSIONS version -->
-		<net-extensions.version>5</net-extensions.version>
+		<net-extensions.version>5.1</net-extensions.version>
 			...
 	</properties>
 			...
@@ -38,7 +38,7 @@ Than you can add the dependency to your dependencies:
 			...
             <!-- NET-EXTENSIONS DEPENDENCY -->
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>net-extensions</artifactId>
 				<version>${net-extensions.version}</version>
 			</dependency>
