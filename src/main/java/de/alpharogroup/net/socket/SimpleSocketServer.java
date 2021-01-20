@@ -29,9 +29,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import de.alpharogroup.throwable.ThrowableExtensions;
 import lombok.Getter;
 import lombok.extern.java.Log;
+import de.alpharogroup.throwable.ExceptionExtensions;
 
 /**
  * The class {@link SimpleSocketServer}.
@@ -41,14 +41,12 @@ import lombok.extern.java.Log;
 public class SimpleSocketServer implements Runnable
 {
 
-	/** The client socket. */
-	private Socket clientSocket;
-
-	/** The server port. */
-	private int port;
-
 	/** The server socket. */
 	private final ServerSocket serverSocket;
+	/** The client socket. */
+	private Socket clientSocket;
+	/** The server port. */
+	private int port;
 
 	public SimpleSocketServer(final int ports) throws IOException
 	{
@@ -101,7 +99,7 @@ public class SimpleSocketServer implements Runnable
 				/*
 				 * Log the error of the server if IO fails. Something bad has happened
 				 */
-				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 			}
 		}
 	}

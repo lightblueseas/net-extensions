@@ -49,11 +49,10 @@ import java.util.Map;
 public class BaseProxySelector extends ProxySelector
 {
 
-	/** A reference to the default ProxySelector. */
-	private ProxySelector defaultSelector;
-
 	/** A map of proxies. */
 	private final Map<SocketAddress, ProxyDecorator> proxies;
+	/** A reference to the default ProxySelector. */
+	private ProxySelector defaultSelector;
 
 	/**
 	 * Instantiates a new {@link BaseProxySelector}.

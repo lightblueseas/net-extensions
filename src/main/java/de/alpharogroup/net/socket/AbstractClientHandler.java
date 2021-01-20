@@ -31,9 +31,9 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import de.alpharogroup.throwable.ThrowableExtensions;
 import lombok.Getter;
 import lombok.extern.java.Log;
+import de.alpharogroup.throwable.ExceptionExtensions;
 
 /**
  * The class {@link AbstractClientHandler}.
@@ -91,11 +91,11 @@ public abstract class AbstractClientHandler implements Runnable
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 		}
 		catch (final ClassNotFoundException cnfe)
 		{
-			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(cnfe));
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(cnfe));
 		}
 		finally
 		{
@@ -113,7 +113,7 @@ public abstract class AbstractClientHandler implements Runnable
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 			}
 		}
 		log.info("Socket finished: " + socket);

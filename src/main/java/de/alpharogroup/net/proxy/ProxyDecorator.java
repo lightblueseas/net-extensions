@@ -27,8 +27,8 @@ package de.alpharogroup.net.proxy;
 import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.net.Proxy.Type;
 import java.net.SocketAddress;
+import java.net.Proxy.Type;
 
 /**
  * The class {@link ProxyDecorator} decorates a <code>{@link java.net.Proxy}</code> object.
@@ -40,18 +40,14 @@ public class ProxyDecorator implements Serializable
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = -5551993083532366206L;
-
-	/** The failed count. */
-	private int failedCount = 0;
-
 	/** The proxy. */
 	private final Proxy proxy;
-
 	/** The proxy type. */
 	private final Type proxyType;
-
 	/** The socket address. */
 	private final InetSocketAddress socketAddress;
+	/** The failed count. */
+	private int failedCount = 0;
 
 	/**
 	 * Instantiates a new {@link ProxyDecorator} object.

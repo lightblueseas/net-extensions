@@ -34,8 +34,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import de.alpharogroup.throwable.ThrowableExtensions;
 import lombok.extern.java.Log;
+import de.alpharogroup.throwable.ExceptionExtensions;
+import de.alpharogroup.throwable.ThrowableExtensions;
 
 /**
  * Helper class for handling Sockets.
@@ -122,7 +123,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 			closed = false;
 		}
 		finally
@@ -133,7 +134,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 				closed = false;
 			}
 		}
@@ -160,7 +161,7 @@ public class SocketExtensions
 		}
 		catch (final IOException e)
 		{
-			log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+			log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 			closed = false;
 		}
 		finally
@@ -174,7 +175,7 @@ public class SocketExtensions
 			}
 			catch (final IOException e)
 			{
-				log.log(Level.SEVERE, ThrowableExtensions.getStackTrace(e));
+				log.log(Level.SEVERE, ExceptionExtensions.getStackTrace(e));
 				closed = false;
 			}
 		}
