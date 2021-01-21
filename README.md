@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions) 
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/net-extensions.svg?style=flat)](https://github.com/lightblueseas/net-extensions/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions)
-[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/net-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/net-extensions)
+[![Javadocs](https://www.javadoc.io/badge2/io.github.astrapi69/net-extensions/javadoc.svg)](https://www.javadoc.io/doc/io.github.astrapi69/net-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 </div>
@@ -50,8 +50,9 @@ Than you can add the dependency to your dependencies:
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of throw-able:
 
-```
+
 define version in file gradle.properties
+```
 
 netExtensionsVersion=5.1
 ```
