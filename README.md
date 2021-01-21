@@ -4,13 +4,15 @@
 
 [![Build Status](https://travis-ci.org/lightblueseas/net-extensions.svg?branch=master)](https://travis-ci.org/lightblueseas/net-extensions) 
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/net-extensions.svg?style=flat)](https://github.com/lightblueseas/net-extensions/issues) 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/net-extensions)
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/net-extensions.svg)](http://www.javadoc.io/doc/de.alpharogroup/net-extensions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/net-extensions)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/net-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/net-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 </div>
 
 The net-extensions project provides utility classes for network operations.
+
+If you like this project put a ⭐ and donate
 
 ## License
 
@@ -19,20 +21,24 @@ The source code comes under the liberal MIT License, making net-extensions great
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~net-extensions~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~net-extensions~~~) for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of net-extensions:
 
 Than you can add the dependency to your dependencies:
 
+	<properties>
+			...
 		<!-- NET-EXTENSIONS version -->
-		<net-extensions.version>4.14</net-extensions.version>
-
+		<net-extensions.version>5.1</net-extensions.version>
+			...
+	</properties>
+			...
 		<dependencies>
 			...
             <!-- NET-EXTENSIONS DEPENDENCY -->
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>net-extensions</artifactId>
 				<version>${net-extensions.version}</version>
 			</dependency>
@@ -76,11 +82,11 @@ If you like this library, please consider a donation through paypal: <a href="ht
 
 or over bitcoin or bitcoin-cash with:
 
-1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
+36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
 
 or over ether with:
 
-0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
+0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
 
 or over flattr: 
 <a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Fnet-extensions" target="_blank">

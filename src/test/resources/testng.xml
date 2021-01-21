@@ -3,8 +3,10 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="de.alpharogroup.net.IPResolverTest"/>
-      <class name="de.alpharogroup.net.proxy.BaseProxySelectorTest"/>
+      <class name="io.github.astrapi69.net.IPResolverTest"/>
+      <class name="io.github.astrapi69.net.SocketExtensionsTest"/>
+      <class name="io.github.astrapi69.net.proxy.BaseProxySelectorTest"/>
+      <class name="io.github.astrapi69.net.url.URLExtensionsTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
