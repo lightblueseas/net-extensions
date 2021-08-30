@@ -4,6 +4,9 @@
 Version 5.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new method in class URLExtensions that checks if a URL object is reachable
 
 
 Version 5.1

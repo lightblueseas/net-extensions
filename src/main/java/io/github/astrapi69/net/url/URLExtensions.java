@@ -24,8 +24,11 @@
  */
 package io.github.astrapi69.net.url;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLDecoder;
 
 /**
@@ -88,6 +91,26 @@ public class URLExtensions
 	public static boolean isWar(final URL url)
 	{
 		return url.getProtocol().equals(Protocol.WAR.getProtocol());
+	}
+
+	/**
+	 * Checks if the given {@link URL} is reachable
+	 *
+	 * @param url
+	 *            the url
+	 * @return true, if the given {@link URL} is reachable
+	 */
+	public static boolean isReachable(URL url) {
+		try {
+			final URLConnection conn = url.openConnection();
+			conn.connect();
+			conn.getInputStream().close();
+		} catch (MalformedURLException e) {
+			return false;
+		} catch (IOException e) {
+			return false;
+		}
+		return true;
 	}
 
 }

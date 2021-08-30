@@ -27,8 +27,12 @@ package io.github.astrapi69.net.url;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
+import java.io.IOException;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
+import java.net.UnknownHostException;
 
 import org.testng.annotations.Test;
 
@@ -53,6 +57,14 @@ public class URLExtensionsTest
 		assertFalse(URLExtensions.isJar(myURL));
 		final URL jarUrl = new URL("jar:file:/home/root/jdk/rt.jar!/test.xml");
 		assertTrue(URLExtensions.isJar(jarUrl));
+	}
+
+	@Test
+	public void testInternetConnection() throws MalformedURLException
+	{
+		URL url = new URL("https://www.google.com");
+		boolean netIsReachable = URLExtensions.isReachable(url);
+		assertTrue(netIsReachable);
 	}
 
 }
