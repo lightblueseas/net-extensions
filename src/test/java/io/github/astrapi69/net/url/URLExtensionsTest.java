@@ -27,12 +27,8 @@ package io.github.astrapi69.net.url;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
-import java.io.IOException;
-import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.UnknownHostException;
 
 import org.testng.annotations.Test;
 

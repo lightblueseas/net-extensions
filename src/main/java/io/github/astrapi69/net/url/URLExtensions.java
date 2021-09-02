@@ -100,14 +100,20 @@ public class URLExtensions
 	 *            the url
 	 * @return true, if the given {@link URL} is reachable
 	 */
-	public static boolean isReachable(URL url) {
-		try {
+	public static boolean isReachable(URL url)
+	{
+		try
+		{
 			final URLConnection conn = url.openConnection();
 			conn.connect();
 			conn.getInputStream().close();
-		} catch (MalformedURLException e) {
+		}
+		catch (MalformedURLException e)
+		{
 			return false;
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			return false;
 		}
 		return true;

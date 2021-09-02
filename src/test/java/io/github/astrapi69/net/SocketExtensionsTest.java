@@ -24,8 +24,9 @@
  */
 package io.github.astrapi69.net;
 
-import io.github.astrapi69.net.socket.SocketExtensions;
 import org.testng.annotations.Test;
+
+import io.github.astrapi69.net.socket.SocketExtensions;
 
 /**
  * The unit test class for the class {@link SocketExtensions}.
