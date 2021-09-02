@@ -7,7 +7,17 @@ Version 5.2-SNAPSHOT
 ADDED:
 
 - new method in class URLExtensions that checks if a URL object is reachable
+- gradle-plugin dependency of io.freefair.gradle:lombok-plugin in version 6.1.0
 
+CHANGED:
+
+- update gradle to new version 7.2
+- update of dependency lombok to new version 1.18.20
+- update of dependency throw-able to new version 1.6
+- update of test dependency test-objects to new version 5.5
+- update of test dependency test-ng to new version 7.4.0
+- update dependency of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
+- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version 0.16.1
 
 Version 5.1
 -------------
