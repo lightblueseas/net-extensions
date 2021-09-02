@@ -30,7 +30,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- NET-EXTENSIONS version -->
-		<net-extensions.version>5.1</net-extensions.version>
+		<net-extensions.version>5.2</net-extensions.version>
 			...
 	</properties>
 			...
@@ -54,7 +54,7 @@ your project `build.gradle` if you want to import the core functionality of net-
 define version in file gradle.properties
 ```
 
-netExtensionsVersion=5.1
+netExtensionsVersion=5.2
 ```
 
 or in build.gradle ext area
@@ -62,7 +62,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    netExtensionsVersion = "5.1"
+    netExtensionsVersion = "5.2"
 			...
 }
 ```
