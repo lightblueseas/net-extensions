@@ -34,9 +34,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
-import lombok.extern.java.Log;
 import io.github.astrapi69.throwable.ExceptionExtensions;
 import io.github.astrapi69.throwable.ThrowableExtensions;
+import lombok.extern.java.Log;
 
 /**
  * Helper class for handling Sockets.

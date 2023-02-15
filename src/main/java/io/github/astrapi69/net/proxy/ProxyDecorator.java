@@ -27,8 +27,8 @@ package io.github.astrapi69.net.proxy;
 import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.net.SocketAddress;
 import java.net.Proxy.Type;
+import java.net.SocketAddress;
 
 /**
  * The class {@link ProxyDecorator} decorates a <code>{@link java.net.Proxy}</code> object.

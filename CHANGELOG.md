@@ -1,8 +1,24 @@
 ## Change log
 ----------------------
 
-Version 5.3-SNAPSHOT
+Version 6-SNAPSHOT
 -------------
+
+ADDED:
+
+- new gradle-plugin dependency of 'org.ajoberstar.grgit:grgit-gradle' in version 5.0.0 for create
+  git release tags
+- new gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.15.0
+
+CHANGED:
+
+- update to jdk version 11
+- update gradle to new version 8.0
+- update dependency of com.github.ben-manes.versions.gradle.plugin to new version 0.45.0
+- update of dependency lombok to new version 1.18.26
+- update of dependency throwable to new version 2.3
+- update of test dependency test-object to new version 7.2
+- update of test dependency test-ng to new version 7.7.1
 
 Version 5.2
 -------------
@@ -53,18 +69,18 @@ Version 4.14
 -------------
 
 ADDED:
- 
+
 - this changelog file
 - new eclipse launch scripts created
 - created PULL_REQUEST_TEMPLATE.md file
 - created CODE_OF_CONDUCT.md file
 - created CONTRIBUTING.md file
 - provide new package.html for the javadoc of new and existing packages
-- javadoc improved and extended 
+- javadoc improved and extended
 - existing class URLExtensions and enum Protocol moved from file-worker to this project
 
 CHANGED:
 
 - update of parent version to 3.11
 - removed unneeded .0 at the end of version
-- update of test-objects dependency version from 4.16.0 to 4.26 
+- update of test-objects dependency version from 4.16.0 to 4.26

@@ -29,9 +29,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 
+import io.github.astrapi69.throwable.ExceptionExtensions;
 import lombok.Getter;
 import lombok.extern.java.Log;
-import io.github.astrapi69.throwable.ExceptionExtensions;
 
 /**
  * The class {@link SimpleSocketServer}.
