@@ -1,9 +1,12 @@
-
 dependencies {
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    implementation("io.github.astrapi69:throwable:$throwableVersion")
-    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
-    testImplementation("com.jcraft:jsch:$jschVersion")
-    testImplementation("org.testng:testng:$testngVersion")
+
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+
+    implementation libs.throwable
+
+    // Note: use of bundles...
+    testImplementation libs.bundles.unit.testing
 }

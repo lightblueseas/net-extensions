@@ -1,0 +1,34 @@
+[versions]
+gradle-plugin-grgit-version = "5.2.2"
+gradle-plugin-license-version = "0.16.1"
+gradle-plugin-lombok-version = "8.6"
+gradle-plugin-spotless-version = "7.0.0.BETA1"
+gradle-plugin-version-catalog-update-version = "0.8.4"
+gradle-plugin-versions-version = "0.51.0"
+jsch-version = "0.1.55"
+lombok-version = "1.18.26"
+test-object-version = "7.2"
+testng-version = "7.7.1"
+throwable-version = "2.3"
+
+[libraries]
+jsch = { module = "com.jcraft:jsch", version.ref = "jsch-version" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
+test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }
+testng = { module = "org.testng:testng", version.ref = "testng-version" }
+throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }
+
+[bundles]
+unit-testing = [
+    "jsch",
+    "test-object",
+    "testng",
+]
+
+[plugins]
+gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
+grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
+license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "gradle-plugin-license-version" }
+lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
+spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
+version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
