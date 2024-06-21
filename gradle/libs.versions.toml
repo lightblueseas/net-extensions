@@ -6,9 +6,9 @@ gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
 jsch-version = "0.1.55"
-lombok-version = "1.18.26"
-test-object-version = "7.2"
-testng-version = "7.7.1"
+lombok-version = "1.18.32"
+test-object-version = "8.2"
+testng-version = "7.10.2"
 throwable-version = "2.3"
 
 [libraries]

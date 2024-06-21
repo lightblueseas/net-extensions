@@ -6,19 +6,20 @@ Version 6-SNAPSHOT
 
 ADDED:
 
-- new gradle-plugin dependency of 'org.ajoberstar.grgit:grgit-gradle' in version 5.0.0 for create
+- new gradle-plugin dependency of 'org.ajoberstar.grgit:grgit-gradle' in version 5.2.2 for create
   git release tags
-- new gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.15.0
+- new gradle-plugin dependency of 'com.diffplug.spotless:spotless-plugin-gradle' in version 7.0.0.BETA1
 
 CHANGED:
 
-- update to jdk version 11
-- update gradle to new version 8.0
-- update dependency of com.github.ben-manes.versions.gradle.plugin to new version 0.45.0
-- update of dependency lombok to new version 1.18.26
+- update to jdk version 17
+- update gradle to new version 8.8
+- update of lombok to new version 1.18.32
+- update of gradle-plugin dependency 'io.freefair.gradle:lombok-plugin' to new version 8.6
+- update of gradle-plugin dependency 'com.github.ben-manes.versions.gradle.plugin' to new version 0.51.0
 - update of dependency throwable to new version 2.3
-- update of test dependency test-object to new version 7.2
-- update of test dependency test-ng to new version 7.7.1
+- update of test dependency test-object to new version 8.2
+- update of test dependency test-ng to new version 7.10.2
 
 Version 5.2
 -------------
