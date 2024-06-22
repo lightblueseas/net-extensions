@@ -78,7 +78,7 @@ public class SshConnector
 		try
 		{
 
-			session = getSshSession("root", "admin", "192.168.0.1", 22);
+			session = getSshSession("root", "admin", "192.168.178.1", 22);
 			channel = (ChannelShell)session.openChannel("shell");
 
 			final PipedOutputStream reply = new PipedOutputStream();
